@@ -3,103 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Идирисова Талайкүл Орозобековна</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f3ee;
-  color: #333;
-  line-height: 1.6;
+html{
+  scroll-behavior:smooth;
 }
 
-header {
-  background: linear-gradient(135deg, #7b4b94, #b978a8);
-  color: white;
-  text-align: center;
-  padding: 55px 20px;
+body{
+  font-family:Arial, sans-serif;
+  background:#f7f4fb;
+  color:#333;
+  line-height:1.7;
 }
 
-header h1 {
-  margin: 0 0 10px;
-  font-size: 32px;
+header{
+  min-height:520px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:50px 20px;
+  background:linear-gradient(135deg,#6d4aa8,#b978b9,#e7b6c9);
+  color:white;
 }
 
-header p {
-  margin: 5px 0;
-  font-size: 18px;
+.hero{
+  max-width:900px;
 }
 
-nav {
-  background: white;
-  padding: 15px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.photo{
+  width:180px;
+  height:180px;
+  margin:0 auto 25px;
+  border-radius:50%;
+  background:white;
+  border:7px solid rgba(255,255,255,.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#8a6598;
+  font-size:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
-nav a {
-  color: #6d3f83;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
+header h1{
+  font-size:38px;
+  margin-bottom:12px;
 }
 
-section {
-  max-width: 950px;
-  margin: 30px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 18px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+header p{
+  font-size:20px;
 }
 
-h2 {
-  color: #6d3f83;
-  margin-top: 0;
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:white;
+  padding:14px 10px;
+  text-align:center;
+  box-shadow:0 3px 15px rgba(0,0,0,.12);
 }
 
-.info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+nav a{
+  display:inline-block;
+  margin:5px 9px;
+  color:#68428b;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.card {
-  background: #faf5fb;
-  padding: 20px;
-  border-radius: 14px;
+nav a:hover{
+  color:#b05b9b;
 }
 
-.card strong {
-  color: #6d3f83;
+section{
+  max-width:1050px;
+  margin:35px auto;
+  padding:40px 30px;
+  background:white;
+  border-radius:24px;
+  box-shadow:0 5px 25px rgba(70,40,90,.1);
 }
 
-ul {
-  padding-left: 22px;
+h2{
+  color:#704694;
+  text-align:center;
+  font-size:30px;
+  margin-bottom:25px;
 }
 
-.quote {
-  background: #f3e8f5;
-  padding: 25px;
-  border-left: 5px solid #7b4b94;
-  border-radius: 10px;
-  font-style: italic;
-  font-size: 18px;
+h3{
+  color:#82519a;
+  margin-bottom:10px;
 }
 
-footer {
-  background: #6d3f83;
-  color: white;
-  text-align: center;
-  padding: 25px;
-  margin-top: 40px;
+.info{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+  margin-bottom:25px;
+}
+
+.card{
+  background:#faf5fc;
+  padding:22px;
+  border-radius:18px;
+  border:1px solid #eee0f2;
+}
+
+.card strong{
+  color:#704694;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+
+.icon{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+ul{
+  padding-left:25px;
+}
+
+li{
+  margin:9px 0;
+}
+
+.quote{
+  max-width:800px;
+  margin:auto;
+  padding:30px;
+  text-align:center;
+  background:#f3e7f7;
+  border-radius:20px;
+  color:#62406f;
+  font-size:21px;
+  font-style:italic;
+}
+
+.button{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  border-radius:30px;
+  background:#704694;
+  color:white;
+  text-decoration:none;
+}
+
+footer{
+  text-align:center;
+  background:#654080;
+  color:white;
+  padding:35px 20px;
+  margin-top:50px;
+}
+
+@media(max-width:600px){
+  header h1{
+    font-size:28px;
+  }
+
+  header p{
+    font-size:17px;
+  }
+
+  section{
+    margin:20px 10px;
+    padding:28px 20px;
+  }
+
+  h2{
+    font-size:25px;
+  }
+
+  nav a{
+    font-size:14px;
+    margin:4px;
+  }
 }
 </style>
 </head>
@@ -107,46 +202,61 @@ footer {
 <body>
 
 <header>
-  <h1>Идирисова Талайкүл Орозобековна</h1>
-  <p>🌷 Башталгыч класстардын мугалими 🌷</p>
-  <p>Билим • Тарбия • Чыгармачылык • Ишеним</p>
+  <div class="hero">
+
+    <div class="photo">
+      📷<br>Сүрөт
+    </div>
+
+    <h1>Идирисова Талайкүл Орозобековна</h1>
+
+    <p>🌷 Башталгыч класстардын мугалими 🌷</p>
+
+    <p>Билим • Тарбия • Чыгармачылык • Ишеним</p>
+
+  </div>
 </header>
 
 <nav>
   <a href="#about">Мен жөнүндө</a>
-  <a href="#goal">Максатым</a>
-  <a href="#principles">Принциптерим</a>
+  <a href="#education">Билимим</a>
   <a href="#experience">Тажрыйбам</a>
+  <a href="#goal">Максатым</a>
+  <a href="#lessons">Сабактарым</a>
+  <a href="#materials">Материалдар</a>
+  <a href="#achievements">Жетишкендиктер</a>
+  <a href="#gallery">Сүрөттөр</a>
+  <a href="#contact">Байланыш</a>
 </nav>
 
 <section id="about">
+
   <h2>👩‍🏫 Мен жөнүндө</h2>
 
   <div class="info">
 
     <div class="card">
-      <strong>Аты-жөнүм</strong><br>
+      <strong>Аты-жөнүм</strong>
+      <br>
       Идирисова Талайкүл Орозобековна
     </div>
 
     <div class="card">
-      <strong>Иштеген жерим</strong><br>
+      <strong>Иштеген жерим</strong>
+      <br>
       «Ой-Терскен жалпы билим берүү мектеби» мекемеси
     </div>
 
     <div class="card">
-      <strong>Кызматым</strong><br>
+      <strong>Кызматым</strong>
+      <br>
       Башталгыч класстардын мугалими
     </div>
 
     <div class="card">
-      <strong>Педагогикалык стажым</strong><br>
+      <strong>Педагогикалык стажым</strong>
+      <br>
       15 жыл
-    </div>
-
-    <div class="card">
-      <strong>Билимим</strong><br>
-      Педагогика магистри
     </div>
 
   </div>
@@ -158,13 +268,49 @@ footer {
 
   <p>
     Ар бир баланын өзгөчө жөндөмү жана мүмкүнчүлүгү бар экенине ишенем.
-    Ошондуктан окуучуларга билим берүү менен бирге алардын өз алдынча
-    ой жүгүртүүсүн, чыгармачылыгын, жоопкерчилигин жана өзүнө болгон
-    ишенимин өнүктүрүүгө өзгөчө көңүл бурам.
+    Окуучуларга билим берүү менен бирге алардын өз алдынча ой жүгүртүүсүн,
+    чыгармачылыгын, жоопкерчилигин жана өзүнө болгон ишенимин өнүктүрүүгө
+    өзгөчө көңүл бурам.
   </p>
+
+</section>
+
+<section id="education">
+
+  <h2>🎓 Билимим</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">🎓</div>
+      <h3>Билим деңгээлим</h3>
+      <p><strong>Педагогика магистри</strong></p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>Кесибим</h3>
+      <p>Башталгыч класстардын мугалими</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="experience">
+
+  <h2>💼 Педагогикалык тажрыйбам</h2>
+
+  <div class="quote">
+    15 жылдык педагогикалык тажрыйба — балдардын билимин,
+    жөндөмүн жана инсандык сапаттарын өнүктүрүүгө багытталган
+    чыгармачыл эмгектин жолу.
+  </div>
+
 </section>
 
 <section id="goal">
+
   <h2>🎯 Менин педагогикалык максатым</h2>
 
   <p>
@@ -172,10 +318,12 @@ footer {
     ой жүгүртүүсүн, чыгармачылыгын, жоопкерчилигин жана өзүнө болгон
     ишенимин өнүктүрүү.
   </p>
+
 </section>
 
-<section id="principles">
-  <h2>💡 Менин педагогикалык принциптерим</h2>
+<section>
+
+  <h2>💡 Менин принциптерим</h2>
 
   <ul>
     <li>Ар бир окуучуну инсан катары урматтоо.</li>
@@ -185,37 +333,150 @@ footer {
     <li>Чыгармачылык жөндөмүн өнүктүрүү.</li>
     <li>Сабакты кызыктуу жана түшүнүктүү уюштуруу.</li>
     <li>Заманбап педагогикалык ыкмаларды колдонуу.</li>
-    <li>Ар бир баланын кичинекей ийгилигин баалоо.</li>
   </ul>
+
 </section>
 
-<section id="experience">
-  <h2>📚 Менин педагогикалык тажрыйбам</h2>
+<section id="lessons">
 
-  <p>
-    15 жылдык педагогикалык ишмердүүлүгүмдүн жүрүшүндө окуучулар менен
-    иштөөдө билим берүү, тарбиялоо жана чыгармачылыкты өнүктүрүүнү
-    айкалыштырууга аракет кылып келем.
-  </p>
+  <h2>📚 Сабактарым</h2>
 
-  <p>
-    Ар бир сабакта окуучунун активдүү катышуусуна, өз оюн эркин айтуусуна
-    жана алган билимин турмушта колдоно алуусуна шарт түзүүгө умтулам.
-  </p>
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">📖</div>
+      <h3>Кыргыз тили</h3>
+      <p>Окуучулардын сабаттуулугун жана тил байлыгын өнүктүрүү.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔢</div>
+      <h3>Математика</h3>
+      <p>Логикалык ой жүгүртүүнү жана математикалык жөндөмдөрдү өнүктүрүү.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>Дүйнө таануу</h3>
+      <p>Айлана-чөйрөнү таанып-билүүгө кызыгуусун арттыруу.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Чыгармачылык</h3>
+      <p>Балдардын чыгармачылык жөндөмдөрүн ачууга шарт түзүү.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="materials">
+
+  <h2>📝 Методикалык материалдар</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>📋 Сабактын иштелмелери</h3>
+      <p>Башталгыч класстар үчүн сабактын үлгүлөрү.</p>
+    </div>
+
+    <div class="card">
+      <h3>🧩 Көнүгүүлөр</h3>
+      <p>Окуучулардын билимин бекемдөө үчүн кызыктуу тапшырмалар.</p>
+    </div>
+
+    <div class="card">
+      <h3>📚 Пайдалуу материалдар</h3>
+      <p>Мугалимдер жана окуучулар үчүн керектүү ресурстар.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="achievements">
+
+  <h2>🏆 Жетишкендиктерим</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">🌟</div>
+      <h3>Педагогикалык тажрыйба</h3>
+      <p>15 жылдык үзүрлүү эмгек.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏅</div>
+      <h3>Кесиптик өнүгүү</h3>
+      <p>Билимди үзгүлтүксүз өркүндөтүүгө умтулуу.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">❤️</div>
+      <h3>Окуучулардын ийгилиги</h3>
+      <p>Ар бир окуучунун жетишкендигин баалоо жана колдоо.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="gallery">
+
+  <h2>📸 Сүрөттөр</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      📷 Бул жерге мугалимдин сүрөттөрү жайгаштырылат.
+    </div>
+
+    <div class="card">
+      🏫 Мектептеги иш-чаралар.
+    </div>
+
+    <div class="card">
+      👩‍🏫 Окуучулар менен болгон кызыктуу учурлар.
+    </div>
+
+  </div>
+
 </section>
 
 <section>
+
   <h2>🌱 Менин педагогикалык ишенимим</h2>
 
   <div class="quote">
-    «Ар бир бала — өзгөчө дүйнө. Аны түшүнүү, колдоо жана туура багыт берүү —
-    мугалимдин эң маанилүү милдети».
+    «Ар бир бала — өзгөчө дүйнө. Аны түшүнүү, колдоо жана туура
+    багыт берүү — мугалимдин эң маанилүү милдети».
   </div>
+
+</section>
+
+<section id="contact">
+
+  <h2>📞 Байланыш</h2>
+
+  <div class="card">
+    <p><strong>👩‍🏫 Мугалим:</strong> Идирисова Талайкүл Орозобековна</p>
+    <p><strong>🏫 Мектеп:</strong> «Ой-Терскен жалпы билим берүү мектеби» мекемеси</p>
+    <p><strong>📚 Кызматы:</strong> Башталгыч класстардын мугалими</p>
+  </div>
+
 </section>
 
 <footer>
-  <p>© Идирисова Талайкүл Орозобековна</p>
+
+  <p>🌷 Идирисова Талайкүл Орозобековна 🌷</p>
+
   <p>Башталгыч класстардын мугалими</p>
+
+  <p>© 2026 Бардык укуктар корголгон</p>
+
 </footer>
 
 </body>
