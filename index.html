@@ -3,39 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Идирисова Талайкүл Орозобековна</title>
 
 <style>
- .certificates{
-  display:flex;
-  gap:15px;
-  overflow-x:auto;
-  overflow-y:hidden;
-  width:100%;
-  padding:10px;
-}
-
-.certificate{
-  min-width:170px !important;
-  width:170px !important;
-  height:220px !important;
-  flex-shrink:0;
-  background:white;
-  border:4px solid #d9b86e;
-  border-radius:10px;
-  overflow:hidden;
-}
-
-.certificate img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  display:block;
-}
- .certificate{
-  min-width:180px !important;
-  height:230px !important;
-} 
 *{
   margin:0;
   padding:0;
@@ -47,19 +18,20 @@ html{
 }
 
 body{
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:Georgia,"Times New Roman",serif;
   background:#fffdfb;
   color:#172d4d;
 }
 
-/* ЖОГОРКУ МЕНЮ */
+/* ================= МЕНЮ ================= */
+
 .navbar{
-  height:75px;
+  min-height:75px;
   background:white;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 6%;
+  padding:12px 6%;
   box-shadow:0 2px 12px rgba(0,0,0,.06);
   position:sticky;
   top:0;
@@ -78,7 +50,7 @@ body{
 
 .menu{
   display:flex;
-  gap:28px;
+  gap:22px;
   align-items:center;
 }
 
@@ -96,26 +68,27 @@ body{
 .contact-btn{
   background:#152e52;
   color:white!important;
-  padding:13px 23px;
+  padding:12px 20px;
   border-radius:30px;
 }
 
-/* БАШКЫ БЕТ */
+/* ================= БАШКЫ БЕТ ================= */
+
 .hero{
-  min-height:500px;
+  min-height:560px;
   padding:55px 8%;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:40px;
   background:
     radial-gradient(circle at 15% 25%,#f8e5c7 2px,transparent 3px),
     radial-gradient(circle at 80% 20%,#f5d7aa 2px,transparent 3px),
     #fffdf9;
-  overflow:hidden;
 }
 
 .hero-text{
-  width:48%;
+  width:50%;
 }
 
 .subtitle{
@@ -126,7 +99,7 @@ body{
 }
 
 .hero h1{
-  font-size:47px;
+  font-size:45px;
   line-height:1.08;
   letter-spacing:1px;
   color:#152e52;
@@ -173,7 +146,8 @@ body{
   color:white;
 }
 
-/* СҮРӨТ */
+/* ================= СҮРӨТ ================= */
+
 .hero-photo{
   width:43%;
   display:flex;
@@ -182,8 +156,8 @@ body{
 }
 
 .photo-circle{
-  width:390px;
-  height:390px;
+  width:360px;
+  height:360px;
   border-radius:50%;
   background:#f5c8cf;
   border:4px solid #d6b57a;
@@ -194,7 +168,6 @@ body{
   align-items:center;
   justify-content:center;
   overflow:hidden;
-  position:relative;
 }
 
 .photo-circle img{
@@ -209,25 +182,26 @@ body{
   font-size:20px;
 }
 
-/* ГҮЛ */
+/* ================= ГҮЛ ================= */
+
 .flower{
   position:absolute;
-  font-size:75px;
-  color:#e98da0;
+  font-size:65px;
   z-index:2;
 }
 
 .flower.one{
-  right:-20px;
-  bottom:15px;
+  right:-10px;
+  bottom:10px;
 }
 
 .flower.two{
-  left:-20px;
-  bottom:45px;
+  left:-10px;
+  bottom:35px;
 }
 
-/* ПРИНЦИПТЕР */
+/* ================= ПРИНЦИПТЕР ================= */
+
 .principles{
   width:90%;
   margin:-20px auto 45px;
@@ -252,7 +226,7 @@ body{
 }
 
 .icon{
-  font-size:38px;
+  font-size:35px;
   color:#d5ad62;
   margin-bottom:8px;
 }
@@ -263,7 +237,8 @@ body{
   line-height:1.5;
 }
 
-/* БӨЛҮМ */
+/* ================= БӨЛҮМ ================= */
+
 .section{
   width:90%;
   max-width:1200px;
@@ -284,16 +259,17 @@ body{
   margin-top:5px;
 }
 
-/* МАТЕРИАЛДАР */
+/* ================= МАТЕРИАЛДАР ================= */
+
 .materials{
   display:grid;
   grid-template-columns:repeat(5,1fr);
-  gap:10px;
+  gap:12px;
 }
 
 .material{
   border-radius:15px;
-  padding:28px 15px;
+  padding:25px 15px;
   text-align:center;
   min-height:180px;
 }
@@ -319,8 +295,8 @@ body{
 }
 
 .material-icon{
-  font-size:38px;
-  margin-bottom:12px;
+  font-size:35px;
+  margin-bottom:10px;
 }
 
 .material h3{
@@ -361,69 +337,66 @@ body{
   background:#dc7189;
 }
 
-<!-- ЖЕТИШКЕНДИКТЕР -->
-<section class="achievements" id="achievements">
+/* ================= ЖЕТИШКЕНДИКТЕР ================= */
 
-  <div class="achievement-title">
-    <div class="trophy">🏆</div>
-    <h2>ЖЕТИШКЕНДИКТЕРИМ</h2>
-    <p>Эмгек жолумдагы сыймыктуу жетишкендиктерим</p>
-  </div>
+.achievements{
+  background:#102b4e;
+  color:white;
+  padding:40px 6%;
+  margin-top:60px;
+}
 
-  <div class="certificates">
+.achievement-title{
+  text-align:center;
+  margin-bottom:30px;
+}
 
-    <div class="certificate">
-     <img src="./certificate_111_c5fe3dbbf4f746f5bc5e9dc04359883b_168.jpg" alt="Сертификат"> 
-    </div>
+.achievement-title h2{
+  font-size:27px;
+  margin:8px 0;
+}
 
+.trophy{
+  font-size:55px;
+}
 
-<div class="certificate">
-  <img src="./Scanner.jpg" alt="Сертификат">
-</div>
+/* СЕРТИФИКАТТАРДЫН КАТАРЫ */
 
-<div class="certificate">
-  <img src="./IMG-20240702-WA0245.jpg" alt="Жетишкендик">
-</div>
+.certificates{
+  width:100%;
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:15px 5px 20px;
+  scroll-behavior:smooth;
+}
 
-<div class="certificate">
-  <img src="./20Scanner_2024_06_18-05.jpg" alt="Жетишкендик">
-</div>
+/* АР БИР СЕРТИФИКАТ */
 
-<div class="certificate">
-  <img src="./20Scanner_2024_06_18-04.jpg" alt="Жетишкендик">
-</div>
+.certificate{
+  width:180px;
+  min-width:180px;
+  height:230px;
+  background:white;
+  border:4px solid #d9b86e;
+  border-radius:10px;
+  overflow:hidden;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-<div class="certificate">
-  <img src="./20Scanner_2024_06_18-03.jpg" alt="Жетишкендик">
-</div>
+.certificate img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
 
-<div class="certificate">
-  <img src="./20Scanner_2024_06_18-02.jpg" alt="Жетишкендик">
-</div>
+/* ================= ИШ-ЧАРАЛАР ================= */
 
-<div class="certificate">
-  <img src="./20Scanner_2024_06_18(2)-02.jpg" alt="Жетишкендик">
-</div>
-
-<div class="certificate">
-  <img src="./20Scanner_2024_06_18(2)-01.jpg" alt="Жетишкендик">
-</div>
-
-<div class="certificate">
-  <img src="./20260516_180459.jpg" alt="Жетишкендик">
-</div>
-
-<div class="certificate">
-  <img src="./20Scanner_2024_06_18(1)-02.jpg" alt="Жетишкендик">
-</div>
-
-<div class="certificate">
-  <img src="./20Scanner_2024_06_18(1)-01.jpg" alt="Жетишкендик">
-</div>
-    
-</section>
-
-/* ИШ-ЧАРАЛАР */
 .events{
   display:grid;
   grid-template-columns:repeat(5,1fr);
@@ -448,7 +421,18 @@ body{
   object-fit:cover;
 }
 
-/* БАЙЛАНЫШ */
+/* ================= МЕН ЖӨНҮНДӨ ================= */
+
+.about-text{
+  text-align:center;
+  max-width:800px;
+  margin:auto;
+  font-size:17px;
+  line-height:1.8;
+}
+
+/* ================= БАЙЛАНЫШ ================= */
+
 .footer{
   background:#fff9f5;
   border-top:1px solid #f0ded4;
@@ -456,7 +440,6 @@ body{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   gap:30px;
-  position:relative;
 }
 
 .footer h3{
@@ -474,7 +457,8 @@ body{
   letter-spacing:8px;
 }
 
-/* ТЕЛЕФОН */
+/* ================= ТЕЛЕФОН ================= */
+
 @media(max-width:900px){
 
   .menu{
@@ -493,7 +477,7 @@ body{
 
   .hero-photo{
     width:100%;
-    margin-top:40px;
+    margin-top:30px;
   }
 
   .hero h1{
@@ -503,6 +487,11 @@ body{
   .photo-circle{
     width:300px;
     height:300px;
+  }
+
+  .quote{
+    margin-left:auto;
+    margin-right:auto;
   }
 
   .buttons{
@@ -524,15 +513,6 @@ body{
 
   .events{
     grid-template-columns:1fr 1fr;
-  }
-
-  .achievements{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .achievement-title{
-    width:100%;
   }
 
   .footer{
@@ -561,13 +541,20 @@ body{
   .buttons{
     flex-direction:column;
   }
+
+  .certificate{
+    width:160px;
+    min-width:160px;
+    height:205px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- МЕНЮ -->
+<!-- ================= МЕНЮ ================= -->
+
 <nav class="navbar">
 
   <div class="logo">
@@ -587,7 +574,8 @@ body{
 
 </nav>
 
-<!-- БАШКЫ БЕТ -->
+<!-- ================= БАШКЫ БЕТ ================= -->
+
 <section class="hero" id="home">
 
   <div class="hero-text">
@@ -622,8 +610,11 @@ body{
 
     <div class="photo-circle">
 
-      <!-- КИЙИН БУЛ ЖЕРГЕ СЕНИН СҮРӨТҮҢДҮ КОЁБУЗ -->
-     <img src="teacher-photo.png" alt="Идирисова Талайкүл Орозобековна"> 
+      <div class="photo-placeholder">
+        📷<br>
+        Сүрөт бул жерге коюлат
+      </div>
+
     </div>
 
     <div class="flower one">🌸</div>
@@ -633,7 +624,8 @@ body{
 
 </section>
 
-<!-- ПРИНЦИПТЕР -->
+<!-- ================= ПРИНЦИПТЕР ================= -->
+
 <div class="principles">
 
   <div class="principle">
@@ -663,7 +655,8 @@ body{
 
 </div>
 
-<!-- МАТЕРИАЛДАР -->
+<!-- ================= МАТЕРИАЛДАР ================= -->
+
 <section class="section" id="materials">
 
   <h2 class="section-title">
@@ -676,50 +669,35 @@ body{
     <div class="material">
       <div class="material-icon">123</div>
       <h3>Математика</h3>
-      <p>
-        Сабактын иштелмелери, презентациялар,
-        тесттер, көңүлдүү ырлар.
-      </p>
+      <p>Сабактын иштелмелери, презентациялар, тесттер, көңүлдүү ырлар.</p>
       <a class="view" href="#">Көрүү →</a>
     </div>
 
     <div class="material">
       <div class="material-icon">🪶</div>
       <h3>Кыргыз тили</h3>
-      <p>
-        Сабактын иштелмелери, эрежелер,
-        диктанттар, карточкалар.
-      </p>
+      <p>Сабактын иштелмелери, эрежелер, диктанттар, карточкалар.</p>
       <a class="view" href="#">Көрүү →</a>
     </div>
 
     <div class="material">
       <div class="material-icon">📖</div>
       <h3>Адабий окуу</h3>
-      <p>
-        Сабактар, тексттер, презентациялар,
-        аңгемелер, жомоктор.
-      </p>
+      <p>Сабактар, тексттер, презентациялар, аңгемелер, жомоктор.</p>
       <a class="view" href="#">Көрүү →</a>
     </div>
 
     <div class="material">
       <div class="material-icon">🌍</div>
       <h3>Дүйнө таануу</h3>
-      <p>
-        Сабактар, презентациялар,
-        карталар, видеолор.
-      </p>
+      <p>Сабактар, презентациялар, карталар, видеолор.</p>
       <a class="view" href="#">Көрүү →</a>
     </div>
 
     <div class="material">
       <div class="material-icon">🎨</div>
       <h3>Кошумча материалдар</h3>
-      <p>
-        Класс сааттар, майрамдык сценарийлер,
-        дидактикалык оюндар.
-      </p>
+      <p>Класс сааттар, майрамдык сценарийлер, дидактикалык оюндар.</p>
       <a class="view" href="#">Көрүү →</a>
     </div>
 
@@ -727,8 +705,8 @@ body{
 
 </section>
 
-<!-- ЖЕТИШКЕНДИКТЕР -->
-<!-- ЖЕТИШКЕНДИКТЕР -->
+<!-- ================= ЖЕТИШКЕНДИКТЕР ================= -->
+
 <section class="achievements" id="achievements">
 
   <div class="achievement-title">
@@ -737,85 +715,62 @@ body{
 
     <h2>ЖЕТИШКЕНДИКТЕРИМ</h2>
 
-    <p>
-      Эмгек жолумдагы сыймыктуу
-      жетишкендиктерим
-    </p>
+    <p>Эмгек жолумдагы сыймыктуу жетишкендиктерим</p>
 
   </div>
 
   <div class="certificates">
 
     <div class="certificate">
-      <img src="certificate_111_c5fe3dbbf4f746f5bc5e9dc04359883b_168.jpg"
-           alt="Сертификат">
+      <img src="./certificate_111_c5fe3dbbf4f746f5bc5e9dc04359883b_168.jpg" alt="Сертификат">
     </div>
 
     <div class="certificate">
-      <img src="Screenshot_20251222_171100_WhatsApp.jpg"
-           alt="Жетишкендик">
+      <img src="./IMG-20240702-WA0245.jpg" alt="Жетишкендик">
     </div>
 
     <div class="certificate">
-      <img src="Scanner.jpg"
-           alt="Сканерленген документ">
+      <img src="./20Scanner_2024_06_18-05.jpg" alt="Жетишкендик">
     </div>
 
     <div class="certificate">
-      <img src="IMG-20240702-WA0245.jpg"
-           alt="Жетишкендик">
+      <img src="./20Scanner_2024_06_18-04.jpg" alt="Жетишкендик">
     </div>
 
     <div class="certificate">
-      <img src="20Scanner_2024_06_18-05.jpg"
-           alt="Жетишкендик">
+      <img src="./20Scanner_2024_06_18-03.jpg" alt="Жетишкендик">
     </div>
 
     <div class="certificate">
-      <img src="20Scanner_2024_06_18-04.jpg"
-           alt="Жетишкендик">
+      <img src="./20Scanner_2024_06_18-02.jpg" alt="Жетишкендик">
     </div>
 
     <div class="certificate">
-      <img src="20Scanner_2024_06_18-03.jpg"
-           alt="Жетишкендик">
+      <img src="./20Scanner_2024_06_18(2)-02.jpg" alt="Жетишкендик">
     </div>
 
     <div class="certificate">
-      <img src="20Scanner_2024_06_18-02.jpg"
-           alt="Жетишкендик">
+      <img src="./20Scanner_2024_06_18(2)-01.jpg" alt="Жетишкендик">
     </div>
 
     <div class="certificate">
-      <img src="20Scanner_2024_06_18(2)-02.jpg"
-           alt="Жетишкендик">
+      <img src="./20260516_180459.jpg" alt="Жетишкендик">
     </div>
 
     <div class="certificate">
-      <img src="20Scanner_2024_06_18(2)-01.jpg"
-           alt="Жетишкендик">
+      <img src="./20Scanner_2024_06_18(1)-02.jpg" alt="Жетишкендик">
     </div>
 
     <div class="certificate">
-      <img src="main/20260516_180459.jpg"
-           alt="Жетишкендик">
-    </div>
-
-    <div class="certificate">
-      <img src="20Scanner_2024_06_18(1)-02.jpg"
-           alt="Жетишкендик">
-    </div>
-
-    <div class="certificate">
-      <img src="20Scanner_2024_06_18(1)-01.jpg"
-           alt="Жетишкендик">
+      <img src="./20Scanner_2024_06_18(1)-01.jpg" alt="Жетишкендик">
     </div>
 
   </div>
 
 </section>
 
-<!-- ИШ-ЧАРАЛАР -->
+<!-- ================= ИШ-ЧАРАЛАР ================= -->
+
 <section class="section" id="events">
 
   <h2 class="section-title">
@@ -835,7 +790,8 @@ body{
 
 </section>
 
-<!-- МЕН ЖӨНҮНДӨ -->
+<!-- ================= МЕН ЖӨНҮНДӨ ================= -->
+
 <section class="section" id="about">
 
   <h2 class="section-title">
@@ -843,7 +799,7 @@ body{
     <span>♥</span>
   </h2>
 
-  <p style="text-align:center;max-width:800px;margin:auto;font-size:17px;">
+  <p class="about-text">
     Мен, Идирисова Талайкүл Орозобековна,
     «Ой-Терскен жалпы билим берүү мектеби» мекемесинде
     башталгыч класстардын мугалими болуп эмгектенем.
@@ -853,7 +809,8 @@ body{
 
 </section>
 
-<!-- МАКСАТ -->
+<!-- ================= МАКСАТ ================= -->
+
 <section class="section">
 
   <h2 class="section-title">
@@ -861,7 +818,7 @@ body{
     <span>♥</span>
   </h2>
 
-  <p style="text-align:center;max-width:800px;margin:auto;font-size:17px;">
+  <p class="about-text">
     Окуучуларга билим берүү менен бирге алардын
     өз алдынча ой жүгүртүүсүн, чыгармачылыгын,
     жоопкерчилигин жана өзүнө болгон ишенимин өнүктүрүү.
@@ -869,7 +826,8 @@ body{
 
 </section>
 
-<!-- БАЙЛАНЫШ -->
+<!-- ================= БАЙЛАНЫШ ================= -->
+
 <footer class="footer" id="contact">
 
   <div>
@@ -881,7 +839,7 @@ body{
 
   <div>
     <h3>Байланыш</h3>
-    <p>📍 Кыргызстан, Бишкек ш.</p>
+    <p>📍 Кыргызстан</p>
     <p>📞 +996 555 12 34 56</p>
     <p>✉️ talaykul.idirisova@mail.ru</p>
   </div>
@@ -896,6 +854,7 @@ body{
     <div class="social">
       ● ● ● ●
     </div>
+
   </div>
 
 </footer>
