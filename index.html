@@ -1044,4 +1044,11 @@ document.querySelectorAll('.certificate').forEach(function(cert){
 </footer>
 
 </body>
+  <script>
+document.querySelectorAll('.certificate').forEach(function(cert) {
+  cert.onclick = function() {
+    this.classList.toggle('fullscreen');
+  };
+});
+</script>
 </html>
