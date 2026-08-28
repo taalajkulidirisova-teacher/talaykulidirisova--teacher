@@ -81,6 +81,7 @@ body{
   align-items:center;
   justify-content:space-between;
   gap:40px;
+
   background:
     radial-gradient(circle at 15% 25%,#f8e5c7 2px,transparent 3px),
     radial-gradient(circle at 80% 20%,#f5d7aa 2px,transparent 3px),
@@ -161,9 +162,11 @@ body{
   border-radius:50%;
   background:#f5c8cf;
   border:4px solid #d6b57a;
+
   box-shadow:
     0 0 0 8px #fff,
     0 0 0 10px #e4c98e;
+
   display:flex;
   align-items:center;
   justify-content:center;
@@ -175,14 +178,6 @@ body{
   height:100%;
   object-fit:cover;
 }
-
-.photo-placeholder{
-  text-align:center;
-  color:#b46c7b;
-  font-size:20px;
-}
-
-/* ================= ГҮЛ ================= */
 
 .flower{
   position:absolute;
@@ -209,8 +204,10 @@ body{
   border-radius:28px;
   padding:25px 20px;
   box-shadow:0 5px 25px rgba(0,0,0,.12);
+
   display:grid;
   grid-template-columns:repeat(5,1fr);
+
   position:relative;
   z-index:5;
 }
@@ -321,22 +318,6 @@ body{
   text-decoration:none;
 }
 
-.material:nth-child(2) .view{
-  background:#319467;
-}
-
-.material:nth-child(3) .view{
-  background:#b66bc1;
-}
-
-.material:nth-child(4) .view{
-  background:#e3a52d;
-}
-
-.material:nth-child(5) .view{
-  background:#dc7189;
-}
-
 /* ================= ЖЕТИШКЕНДИКТЕР ================= */
 
 .achievements{
@@ -360,29 +341,33 @@ body{
   font-size:55px;
 }
 
-/* СЕРТИФИКАТТАРДЫН КАТАРЫ */
+/* ================= СЕРТИФИКАТТАР ================= */
 
 .certificates{
   width:100%;
   display:flex;
   gap:18px;
+
   overflow-x:auto;
   overflow-y:hidden;
-  padding:15px 5px 20px;
+
+  padding:15px 5px 25px;
+
   scroll-behavior:smooth;
 }
 
-/* АР БИР СЕРТИФИКАТ */
-
 .certificate{
-  width:180px;
-  min-width:180px;
-  height:230px;
+  width:210px;
+  min-width:210px;
+  height:270px;
+
   background:white;
   border:4px solid #d9b86e;
   border-radius:10px;
+
   overflow:hidden;
   flex-shrink:0;
+
   display:flex;
   align-items:center;
   justify-content:center;
@@ -393,6 +378,7 @@ body{
   height:100%;
   object-fit:contain;
   display:block;
+  background:white;
 }
 
 /* ================= ИШ-ЧАРАЛАР ================= */
@@ -407,9 +393,11 @@ body{
   height:145px;
   border-radius:15px;
   background:#f1e6df;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   text-align:center;
   color:#777;
   overflow:hidden;
@@ -427,6 +415,7 @@ body{
   text-align:center;
   max-width:800px;
   margin:auto;
+
   font-size:17px;
   line-height:1.8;
 }
@@ -436,7 +425,9 @@ body{
 .footer{
   background:#fff9f5;
   border-top:1px solid #f0ded4;
+
   padding:45px 8%;
+
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   gap:30px;
@@ -543,9 +534,9 @@ body{
   }
 
   .certificate{
-    width:160px;
-    min-width:160px;
-    height:205px;
+    width:175px;
+    min-width:175px;
+    height:225px;
   }
 }
 </style>
@@ -563,13 +554,18 @@ body{
   </div>
 
   <div class="menu">
+
     <a href="#home">Башкы бет</a>
     <a href="#about">Мен жөнүндө</a>
     <a href="#materials">Материалдар</a>
     <a href="#achievements">Жетишкендиктер</a>
     <a href="#events">Иш-чаралар</a>
     <a href="#contact">Байланыш</a>
-    <a class="contact-btn" href="#contact">Байланыш</a>
+
+    <a class="contact-btn" href="#contact">
+      Байланыш
+    </a>
+
   </div>
 
 </nav>
@@ -600,8 +596,15 @@ body{
     </p>
 
     <div class="buttons">
-      <a class="btn btn-blue" href="#about">👩‍🏫 Мен жөнүндө</a>
-      <a class="btn btn-pink" href="#materials">📖 Материалдарды көрүү</a>
+
+      <a class="btn btn-blue" href="#about">
+        👩‍🏫 Мен жөнүндө
+      </a>
+
+      <a class="btn btn-pink" href="#materials">
+        📖 Материалдарды көрүү
+      </a>
+
     </div>
 
   </div>
@@ -610,10 +613,10 @@ body{
 
     <div class="photo-circle">
 
-      <div class="photo-placeholder">
-        📷<br>
-        Сүрөт бул жерге коюлат
-      </div>
+      <img
+        src="./teacher-photo.png"
+        alt="Идирисова Талайкүл Орозобековна"
+      >
 
     </div>
 
@@ -630,27 +633,42 @@ body{
 
   <div class="principle">
     <div class="icon">♡</div>
-    <p>Ар бир балага<br>жеке мамиле</p>
+    <p>
+      Ар бир балага<br>
+      жеке мамиле
+    </p>
   </div>
 
   <div class="principle">
     <div class="icon">☆</div>
-    <p>Сапаттуу билим<br>берүүгө умтулуу</p>
+    <p>
+      Сапаттуу билим<br>
+      берүүгө умтулуу
+    </p>
   </div>
 
   <div class="principle">
     <div class="icon">💡</div>
-    <p>Чыгармачылыкка жана<br>изденүүгө шыктандыруу</p>
+    <p>
+      Чыгармачылыкка жана<br>
+      изденүүгө шыктандыруу
+    </p>
   </div>
 
   <div class="principle">
     <div class="icon">♡</div>
-    <p>Боорукердик жана<br>сый — негизги принцип</p>
+    <p>
+      Боорукердик жана<br>
+      сый — негизги принцип
+    </p>
   </div>
 
   <div class="principle">
     <div class="icon">🎓</div>
-    <p>Келечекке ишеним менен<br>кадам таштайбыз</p>
+    <p>
+      Келечекке ишеним менен<br>
+      кадам таштайбыз
+    </p>
   </div>
 
 </div>
@@ -669,81 +687,171 @@ body{
     <div class="material">
       <div class="material-icon">123</div>
       <h3>Математика</h3>
-      <p>Сабактын иштелмелери, презентациялар, тесттер, көңүлдүү ырлар.</p>
+      <p>
+        Сабактын иштелмелери, презентациялар,
+        тесттер, көңүлдүү ырлар.
+      </p>
       <a class="view" href="#">Көрүү →</a>
     </div>
 
     <div class="material">
       <div class="material-icon">🪶</div>
       <h3>Кыргыз тили</h3>
-      <p>Сабактын иштелмелери, эрежелер, диктанттар, карточкалар.</p>
+      <p>
+        Сабактын иштелмелери, эрежелер,
+        диктанттар, карточкалар.
+      </p>
       <a class="view" href="#">Көрүү →</a>
     </div>
 
     <div class="material">
       <div class="material-icon">📖</div>
       <h3>Адабий окуу</h3>
-      <p>Сабактар, тексттер, презентациялар, аңгемелер, жомоктор.</p>
+      <p>
+        Сабактар, тексттер, презентациялар,
+        аңгемелер, жомоктор.
+      </p>
       <a class="view" href="#">Көрүү →</a>
     </div>
 
     <div class="material">
       <div class="material-icon">🌍</div>
       <h3>Дүйнө таануу</h3>
-      <p>Сабактар, презентациялар, карталар, видеолор.</p>
+      <p>
+        Сабактар, презентациялар,
+        карталар, видеолор.
+      </p>
       <a class="view" href="#">Көрүү →</a>
     </div>
-    <div class="certificates">
 
-  <div class="certificate">
-    <div class="certificates">
+    <div class="material">
+      <div class="material-icon">🎨</div>
+      <h3>Кошумча материалдар</h3>
+      <p>
+        Класс сааттар, майрамдык сценарийлер,
+        дидактикалык оюндар.
+      </p>
+      <a class="view" href="#">Көрүү →</a>
+    </div>
 
-  <div class="certificate">
-    <img src="./certificate_111_c5fe3dbbf4f746f5bc5e9dc04359883b_168.jpg" alt="Сертификат 1">
   </div>
 
-  <div class="certificate">
-    <img src="./IMG-20240702-WA0245.jpg" alt="Сертификат 2">
+</section>
+
+<!-- ================= ЖЕТИШКЕНДИКТЕР ================= -->
+
+<section class="achievements" id="achievements">
+
+  <div class="achievement-title">
+
+    <div class="trophy">
+      🏆
+    </div>
+
+    <h2>
+      ЖЕТИШКЕНДИКТЕРИМ
+    </h2>
+
+    <p>
+      Эмгек жолумдагы сыймыктуу жетишкендиктерим
+    </p>
+
   </div>
 
-  <div class="certificate">
-    <img src="./ACE Scanner_2024_06_18-05.jpg" alt="Сертификат 3">
-  </div>
+  <!-- БАРДЫК СЕРТИФИКАТТАР -->
 
-  <div class="certificate">
-    <img src="./ACE Scanner_2024_06_18-04.jpg" alt="Сертификат 4">
-  </div>
+  <div class="certificates">
 
-  <div class="certificate">
-    <img src="./ACE Scanner_2024_06_18-03.jpg" alt="Сертификат 5">
-  </div>
+    <div class="certificate">
+      <img
+        src="./certificate_111_c5fe3dbbf4f746f5bc5e9dc04359883b_168.jpg"
+        alt="Сертификат 1"
+      >
+    </div>
 
-  <div class="certificate">
-    <img src="./ACE Scanner_2024_06_18-02.jpg" alt="Сертификат 6">
-  </div>
+    <div class="certificate">
+      <img
+        src="./IMG-20240702-WA0245.jpg"
+        alt="Сертификат 2"
+      >
+    </div>
 
-  <div class="certificate">
-    <img src="./ACE Scanner_2024_06_18(2)-02.jpg" alt="Сертификат 7">
-  </div>
+    <div class="certificate">
+      <img
+        src="./ACE%20Scanner_2024_06_18-05.jpg"
+        alt="Сертификат 3"
+      >
+    </div>
 
-  <div class="certificate">
-    <img src="./ACE Scanner_2024_06_18(2)-01.jpg" alt="Сертификат 8">
-  </div>
+    <div class="certificate">
+      <img
+        src="./ACE%20Scanner_2024_06_18-04.jpg"
+        alt="Сертификат 4"
+      >
+    </div>
 
-  <div class="certificate">
-    <img src="./20260516_180459.jpg" alt="Сертификат 9">
-  </div>
+    <div class="certificate">
+      <img
+        src="./ACE%20Scanner_2024_06_18-03.jpg"
+        alt="Сертификат 5"
+      >
+    </div>
 
-  <div class="certificate">
-    <img src="./ACE Scanner_2024_06_18(1)-02.jpg" alt="Сертификат 10">
-  </div>
+    <div class="certificate">
+      <img
+        src="./ACE%20Scanner_2024_06_18-02.jpg"
+        alt="Сертификат 6"
+      >
+    </div>
 
-  <div class="certificate">
-    <img src="./ACE Scanner_2024_06_18(1)-01.jpg" alt="Сертификат 11">
-  </div>
+    <div class="certificate">
+      <img
+        src="./ACE%20Scanner_2024_06_18(2)-02.jpg"
+        alt="Сертификат 7"
+      >
+    </div>
 
-</div>
-  
+    <div class="certificate">
+      <img
+        src="./ACE%20Scanner_2024_06_18(2)-01.jpg"
+        alt="Сертификат 8"
+      >
+    </div>
+
+    <div class="certificate">
+      <img
+        src="./20260516_180459.jpg"
+        alt="Сертификат 9"
+      >
+    </div>
+
+    <div class="certificate">
+      <img
+        src="./ACE%20Scanner_2024_06_18(1)-02.jpg"
+        alt="Сертификат 10"
+      >
+    </div>
+
+    <div class="certificate">
+      <img
+        src="./ACE%20Scanner_2024_06_18(1)-01.jpg"
+        alt="Сертификат 11"
+      >
+    </div>
+
+    <div class="certificate">
+      <img
+        src="./Screenshot_20250819_203259_PDF%20Scanner%20-%20ACE%20Scanner.jpg"
+        alt="Сертификат 12"
+      >
+    </div>
+
+    <div class="certificate">
+      <img
+        src="./Screenshot_20251222_171100_WhatsApp.jpg"
+        alt="Сертификат 13"
+      >
+    </div>
 
   </div>
 
@@ -760,11 +868,30 @@ body{
 
   <div class="events">
 
-    <div class="event-photo">📷<br>Сүрөт 1</div>
-    <div class="event-photo">📷<br>Сүрөт 2</div>
-    <div class="event-photo">📷<br>Сүрөт 3</div>
-    <div class="event-photo">📷<br>Сүрөт 4</div>
-    <div class="event-photo">📷<br>Сүрөт 5</div>
+    <div class="event-photo">
+      📷<br>
+      Сүрөт 1
+    </div>
+
+    <div class="event-photo">
+      📷<br>
+      Сүрөт 2
+    </div>
+
+    <div class="event-photo">
+      📷<br>
+      Сүрөт 3
+    </div>
+
+    <div class="event-photo">
+      📷<br>
+      Сүрөт 4
+    </div>
+
+    <div class="event-photo">
+      📷<br>
+      Сүрөт 5
+    </div>
 
   </div>
 
@@ -781,8 +908,9 @@ body{
 
   <p class="about-text">
     Мен, Идирисова Талайкүл Орозобековна,
-    «Ой-Терскен жалпы билим берүү мектеби» мекемесинде
-    башталгыч класстардын мугалими болуп эмгектенем.
+    «Ой-Терскен жалпы билим берүү мектеби»
+    мекемесинде башталгыч класстардын мугалими
+    болуп эмгектенем.
     Педагогикалык стажым — 15 жыл.
     Билимим — Педагогика магистри.
   </p>
@@ -801,7 +929,8 @@ body{
   <p class="about-text">
     Окуучуларга билим берүү менен бирге алардын
     өз алдынча ой жүгүртүүсүн, чыгармачылыгын,
-    жоопкерчилигин жана өзүнө болгон ишенимин өнүктүрүү.
+    жоопкерчилигин жана өзүнө болгон ишенимин
+    өнүктүрүү.
   </p>
 
 </section>
@@ -811,21 +940,51 @@ body{
 <footer class="footer" id="contact">
 
   <div>
-    <h3>Идирисова Талайкүл Орозобековна</h3>
-    <p>Башталгыч класстын мугалими</p>
-    <p>«Ой-Терскен жалпы билим берүү мектеби» мекемеси</p>
-    <p>Билимим: Педагогика магистри</p>
+
+    <h3>
+      Идирисова Талайкүл Орозобековна
+    </h3>
+
+    <p>
+      Башталгыч класстын мугалими
+    </p>
+
+    <p>
+      «Ой-Терскен жалпы билим берүү мектеби» мекемеси
+    </p>
+
+    <p>
+      Билимим: Педагогика магистри
+    </p>
+
   </div>
 
   <div>
-    <h3>Байланыш</h3>
-    <p>📍 Кыргызстан</p>
-    <p>📞 +996 555 12 34 56</p>
-    <p>✉️ talaykul.idirisova@mail.ru</p>
+
+    <h3>
+      Байланыш
+    </h3>
+
+    <p>
+      📍 Кыргызстан
+    </p>
+
+    <p>
+      📞 +996 555 12 34 56
+    </p>
+
+    <p>
+      ✉️ talaykul.idirisova@mail.ru
+    </p>
+
   </div>
 
   <div>
-    <h3>Мугалим деген —</h3>
+
+    <h3>
+      Мугалим деген —
+    </h3>
+
     <p>
       жөн гана кесип эмес,<br>
       ал — жүрөктүн иши.
