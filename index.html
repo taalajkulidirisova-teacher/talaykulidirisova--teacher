@@ -577,6 +577,41 @@ body{
     height:225px;
   }
 }
+.image-modal{
+  display:none;
+  position:fixed;
+  z-index:99999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.9);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.image-modal.show{
+  display:flex;
+}
+
+.image-modal img{
+  max-width:95%;
+  max-height:90%;
+  object-fit:contain;
+  border-radius:8px;
+}
+
+.close-modal{
+  position:absolute;
+  top:15px;
+  right:25px;
+  color:white;
+  font-size:45px;
+  font-family:Arial,sans-serif;
+  cursor:pointer;
+  z-index:100000;
+}
 </style>
 </head>
 
@@ -1045,7 +1080,37 @@ document.querySelectorAll('.certificate').forEach(function(cert){
   </div>
 
 </footer>
+<div id="imageModal" class="image-modal">
+  <span class="close-modal">&times;</span>
+  <img id="modalImage" src="" alt="Чоң сертификат">
+</div>
 
+<script>
+const modal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeModal = document.querySelector(".close-modal");
+
+document.querySelectorAll(".certificate img").forEach(function(img) {
+  img.parentElement.removeAttribute("target");
+
+  img.parentElement.addEventListener("click", function(e) {
+    e.preventDefault();
+    modalImage.src = img.src;
+    modal.classList.add("show");
+  });
+});
+
+closeModal.addEventListener("click", function() {
+  modal.classList.remove("show");
+});
+
+modal.addEventListener("click", function(e) {
+  if (e.target === modal) {
+    modal.classList.remove("show");
+  }
+});
+</script>
+</footer>
 </body>
 
 </html>
