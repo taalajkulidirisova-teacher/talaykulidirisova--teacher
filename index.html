@@ -843,7 +843,7 @@ document.querySelectorAll('.certificate').forEach(function(cert){
   <div class="certificates">
 
     <div class="certificate">
-      <a href="./certificate_111_c5fe3dbbf4f746f5bc5e9dc04359883b_168.jpg" target="_blank">
+      <a href="#" onclick="openCertificate(this); return false;">
   <img
     src="./certificate_111_c5fe3dbbf4f746f5bc5e9dc04359883b_168.jpg"
     alt="Сертификат 1"
@@ -1111,6 +1111,17 @@ modal.addEventListener("click", function(e) {
 });
 </script>
 </footer>
+<script>
+function openCertificate(link) {
+  const img = link.querySelector("img");
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+
+  modalImage.src = img.src;
+  modal.classList.add("show");
+}
+</script>
+
 </body>
 
 </html>
