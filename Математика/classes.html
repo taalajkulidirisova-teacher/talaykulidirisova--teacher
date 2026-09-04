@@ -1,68 +1,155 @@
+
 <!DOCTYPE html>
 <html lang="ky">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Математика — Дидактикалык материалдар</title>
+
+<title>Математика — Идирисова Талайкүл</title>
 
 <style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
 body{
-  font-family: Arial, sans-serif;
-  background:#fffdfb;
-  color:#172d4d;
+  font-family:Georgia, "Times New Roman", serif;
+  background:#fffaf7;
+  color:#26364a;
   padding:30px 20px;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:25px;
+  color:#d96d87;
+  text-decoration:none;
+  font-weight:bold;
 }
 
 h1{
   text-align:center;
+  color:#d96d87;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  text-align:center;
   margin-bottom:30px;
+  color:#596979;
 }
 
-.class-box{
-  max-width:600px;
-  margin:15px auto;
-  padding:20px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+
+.card{
   background:white;
-  border-radius:16px;
-  box-shadow:0 3px 15px rgba(0,0,0,.08);
+  padding:25px 20px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
+  border:1px solid #f3dfe5;
+  transition:.3s;
 }
 
-.class-box a{
-  display:block;
-  text-decoration:none;
-  color:#172d4d;
-  font-size:20px;
-  font-weight:bold;
+.card:hover{
+  transform:translateY(-4px);
 }
+
+.icon{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.card h2{
+  color:#26364a;
+  font-size:20px;
+  margin-bottom:12px;
+}
+
+.card a{
+  display:inline-block;
+  padding:10px 18px;
+  background:#e87991;
+  color:white;
+  text-decoration:none;
+  border-radius:25px;
+}
+
+.card a:hover{
+  background:#d96d87;
+}
+
+.note{
+  margin-top:30px;
+  text-align:center;
+  color:#777;
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>Математика — Дидактикалык материалдар</h1>
+<div class="container">
 
-<div class="class-box">
-<a href="https://github.com/taalajkulidirisova-teacher/talaykulidirisova--teacher/tree/main/%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/%D0%94%D0%B8%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8B%D0%BA%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B4%D0%B0%D1%80/1-%D0%BA%D0%BB%D0%B0%D1%81%D1%81">
-📁 1-класс
-</a>
+<a class="back" href="../index.html">← Башкы бетке кайтуу</a>
+
+<h1>🧮 Математика</h1>
+
+<p class="subtitle">
+Сабактын иштелмелери, дидактикалык материалдар,
+КТП, предметтик стандарт жана ачык сабактар.
+</p>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="icon">📘</div>
+    <h2>Предметтик стандарт</h2>
+    <a href="Предметтик%20стандарт/">Көрүү →</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">📋</div>
+    <h2>КТП</h2>
+    <a href="Ктп/">Көрүү →</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">📝</div>
+    <h2>Сабактын иштелмелери</h2>
+    <a href="Сабактын%20иштелмелери/">Көрүү →</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">📚</div>
+    <h2>Дидактикалык материалдар</h2>
+    <a href="Дидактикалык%20материалдар/">1–4-класс →</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">👩‍🏫</div>
+    <h2>Ачык сабактардын иштелмелери</h2>
+    <a href="Ачык%20сабактар/">Көрүү →</a>
+  </div>
+
 </div>
 
-<div class="class-box">
-<a href="https://github.com/taalajkulidirisova-teacher/talaykulidirisova--teacher/tree/main/%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/%D0%94%D0%B8%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8B%D0%BA%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B4%D0%B0%D1%80/2-%D0%BA%D0%BB%D0%B0%D1%81%D1%81">
-📁 2-класс
-</a>
-</div>
+<p class="note">
+Идирисова Талайкүл Орозобековна
+</p>
 
-<div class="class-box">
-<a href="https://github.com/taalajkulidirisova-teacher/talaykulidirisova--teacher/tree/main/%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/%D0%94%D0%B8%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8B%D0%BA%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B4%D0%B0%D1%80/3-%D0%BA%D0%BB%D0%B0%D1%81%D1%81">
-📁 3-класс
-</a>
-</div>
-
-<div class="class-box">
-<a href="https://github.com/taalajkulidirisova-teacher/talaykulidirisova--teacher/tree/main/%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/%D0%94%D0%Bидактикалык%20материалдар/4-класс">
-📁 4-класс
-</a>
 </div>
 
 </body>
