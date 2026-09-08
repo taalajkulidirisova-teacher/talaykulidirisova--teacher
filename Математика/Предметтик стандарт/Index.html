@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ky">
 <head>
@@ -8,108 +7,150 @@
 <title>Математика — Предметтик стандарт</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
 body{
-  font-family:Georgia,"Times New Roman",serif;
-  background:#fffaf7;
-  color:#26364a;
-  padding:30px 20px;
-}
-
-.container{
-  max-width:900px;
-  margin:auto;
-}
-
-.back{
-  display:inline-block;
-  margin-bottom:25px;
-  color:#d96d87;
-  text-decoration:none;
-  font-weight:bold;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#fffdfb;
+  color:#172d4d;
+  padding:25px 15px;
 }
 
 h1{
   text-align:center;
-  color:#d96d87;
-  margin-bottom:15px;
+  margin-bottom:30px;
 }
 
-.subtitle{
-  text-align:center;
-  margin-bottom:30px;
-  color:#596979;
+#materials{
+  max-width:900px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
 }
 
 .card{
   background:white;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 4px 18px rgba(0,0,0,.08);
-  border:1px solid #f3dfe5;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 3px 15px rgba(0,0,0,.08);
   text-align:center;
 }
 
-.icon{
-  font-size:50px;
-  margin-bottom:15px;
+.card a{
+  display:block;
+  text-decoration:none;
+  color:#172d4d;
+  font-weight:bold;
+  word-break:break-word;
 }
 
-.card h2{
-  margin-bottom:15px;
-  color:#26364a;
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:contain;
+  border-radius:10px;
+  margin-bottom:10px;
 }
 
-.card p{
-  line-height:1.7;
-}
-
-.note{
-  margin-top:30px;
+.loading{
   text-align:center;
-  color:#777;
+  font-size:18px;
+}
+
+.back{
+  display:block;
+  text-align:center;
+  margin:30px 0;
+  color:#e87991;
+  font-weight:bold;
+  text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<h1>📚 Математика — Предметтик стандарт</h1>
+
+<div id="materials">
+  <div class="loading">⏳ Материалдар жүктөлүүдө...</div>
+</div>
 
 <a class="back" href="../">
-← Математикага кайтуу
+  ← Математикага кайтуу
 </a>
 
-<h1>📘 Предметтик стандарт</h1>
+<script>
 
-<p class="subtitle">
-Математика предмети боюнча предметтик стандарт
-</p>
+const owner = "taalajkulidirisova-teacher";
+const repo = "talaykulidirisova--teacher";
 
-<div class="card">
+const folder =
+"Математика/Предметтик стандарт";
 
-<div class="icon">📚</div>
+const api =
+`https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(folder)}`;
 
-<h2>Математика</h2>
+fetch(api)
 
-<p>
-Бул бөлүмдө математика предмети боюнча
-предметтик стандарт жана тиешелүү окуу-методикалык
-материалдар жайгаштырылат.
-</p>
+.then(response => response.json())
 
-</div>
+.then(files => {
 
-<p class="note">
-Идирисова Талайкүл Орозобековна
-</p>
+  const box = document.getElementById("materials");
 
-</div>
+  box.innerHTML = "";
+
+  if (!Array.isArray(files)) {
+    box.innerHTML =
+      "<p class='loading'>Азырынча материал жок.</p>";
+    return;
+  }
+
+  files
+    .filter(file =>
+      /\.(jpg|jpeg|png|webp|gif|pdf)$/i.test(file.name)
+    )
+    .forEach(file => {
+
+      const card = document.createElement("div");
+      card.className = "card";
+
+      if (/\.(jpg|jpeg|png|webp|gif)$/i.test(file.name)) {
+
+        card.innerHTML = `
+          <a href="${file.download_url}" target="_blank">
+            <img src="${file.download_url}" alt="${file.name}">
+          </a>
+
+          <a href="${file.download_url}" target="_blank">
+            📄 ${file.name}
+          </a>
+        `;
+
+      } else {
+
+        card.innerHTML = `
+          <a href="${file.download_url}" target="_blank">
+            📚 ${file.name}
+          </a>
+        `;
+      }
+
+      box.appendChild(card);
+
+    });
+
+})
+
+.catch(error => {
+
+  document.getElementById("materials").innerHTML =
+    "<p class='loading'>❌ Материалдарды жүктөөдө ката кетти.</p>";
+
+});
+
+</script>
 
 </body>
 </html>
