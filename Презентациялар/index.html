@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>📊 Презентациялар</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#fffdfb;
+  color:#172d4d;
+  padding:25px 15px;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+#presentations{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 3px 15px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.icon{
+  font-size:55px;
+  margin-bottom:12px;
+}
+
+.card a{
+  display:block;
+  text-decoration:none;
+  color:#172d4d;
+  font-weight:bold;
+  word-break:break-word;
+}
+
+.loading{
+  text-align:center;
+  font-size:18px;
+}
+
+.back{
+  display:block;
+  text-align:center;
+  margin:30px 0;
+  color:#e87991;
+  font-weight:bold;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📊 Презентациялар</h1>
+
+<div id="presentations">
+  <div class="loading">⏳ Презентациялар жүктөлүүдө...</div>
+</div>
+
+<a class="back" href="../">
+  ← Башкы бетке кайтуу
+</a>
+
+<script>
+
+const owner = "taalajkulidirisova-teacher";
+const repo = "talaykulidirisova--teacher";
+
+const folder = "Презентациялар";
+
+const api =
+`https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(folder)}`;
+
+fetch(api)
+
+.then(response => response.json())
+
+.then(files => {
+
+  const box = document.getElementById("presentations");
+
+  box.innerHTML = "";
+
+  if (!Array.isArray(files)) {
+    box.innerHTML =
+    "<p class='loading'>Азырынча презентация жок.</p>";
+    return;
+  }
+
+  files
+  .filter(file =>
+    /\.(ppt|pptx|pdf)$/i.test(file.name)
+  )
+  .forEach(file => {
+
+    const card = document.createElement("div");
+
+    card.className = "card";
+
+    card.innerHTML = `
+      <div class="icon">📊</div>
+
+      <a href="${file.download_url}" target="_blank">
+        📚 ${file.name}
+      </a>
+    `;
+
+    box.appendChild(card);
+
+  });
+
+})
+
+.catch(error => {
+
+  document.getElementById("presentations").innerHTML =
+  "<p class='loading'>❌ Презентацияларды жүктөөдө ката кетти.</p>";
+
+});
+
+</script>
+
+</body>
+</html>
