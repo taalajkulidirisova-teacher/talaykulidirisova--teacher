@@ -1,1 +1,183 @@
 
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Математика — Сабактардын иштелмелери — 1-класс</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#fffdfb;
+  color:#172d4d;
+  padding:25px 15px;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+#materials{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:white;
+  padding:12px;
+  border-radius:15px;
+  box-shadow:0 3px 15px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+.card a{
+  display:block;
+  margin-top:10px;
+  text-decoration:none;
+  color:#172d4d;
+  font-weight:bold;
+  word-break:break-word;
+}
+
+.loading{
+  text-align:center;
+  font-size:18px;
+}
+
+.back{
+  display:block;
+  text-align:center;
+  margin:30px 0;
+  color:#e87991;
+  font-weight:bold;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📚 Математика — Сабактардын иштелмелери — 1-класс</h1>
+
+<div id="materials">
+  <div class="loading">⏳ Материалдар жүктөлүүдө...</div>
+</div>
+
+<a class="back" href="../">
+  ← Сабактардын иштелмелерине кайтуу
+</a>
+
+<script>
+
+const owner = "taalajkulidirisova-teacher";
+const repo = "talaykulidirisova--teacher";
+
+const folder =
+"Математика/Сабактардын иштелмелери/1-класс";
+
+const api =
+`https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(folder)}`;
+
+fetch(api)
+
+.then(response => response.json())
+
+.then(files => {
+
+  const box = document.getElementById("materials");
+
+  box.innerHTML = "";
+
+  if (!Array.isArray(files)) {
+
+    box.innerHTML =
+    "<p class='loading'>Азырынча материал жок.</p>";
+
+    return;
+  }
+
+  files
+
+  .filter(file =>
+    /\.(jpg|jpeg|png|webp|gif|pdf|doc|docx|xls|xlsx|ppt|pptx)$/i
+    .test(file.name)
+  )
+
+  .forEach(file => {
+
+    const card = document.createElement("div");
+
+    card.className = "card";
+
+    if (
+      /\.(jpg|jpeg|png|webp|gif)$/i
+      .test(file.name)
+    ) {
+
+      card.innerHTML = `
+
+        <a href="${file.download_url}" target="_blank">
+
+          <img
+            src="${file.download_url}"
+            alt="${file.name}"
+          >
+
+        </a>
+
+        <a
+          href="${file.download_url}"
+          target="_blank"
+        >
+          📄 ${file.name}
+        </a>
+
+      `;
+
+    } else {
+
+      card.innerHTML = `
+
+        <a
+          href="${file.download_url}"
+          target="_blank"
+        >
+          📚 ${file.name}
+        </a>
+
+      `;
+
+    }
+
+    box.appendChild(card);
+
+  });
+
+})
+
+.catch(error => {
+
+  document.getElementById("materials").innerHTML =
+
+  "<p class='loading'>❌ Материалдарды жүктөөдө ката кетти.</p>";
+
+});
+
+</script>
+
+</body>
+</html>
