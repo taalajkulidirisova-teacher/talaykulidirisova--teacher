@@ -7,44 +7,22 @@
 <title>Математика — 2-класс</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
 body{
+  margin:0;
   font-family:Arial,sans-serif;
   background:#fffdfb;
   color:#172d4d;
   padding:25px 15px;
 }
 
-.container{
-  max-width:1000px;
-  margin:auto;
-}
-
-.back{
-  display:inline-block;
-  margin-bottom:25px;
-  color:#e87991;
-  text-decoration:none;
-  font-weight:bold;
-}
-
 h1{
   text-align:center;
-  margin-bottom:8px;
-}
-
-.subtitle{
-  text-align:center;
   margin-bottom:30px;
-  color:#596979;
 }
 
 #materials{
+  max-width:900px;
+  margin:auto;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
   gap:18px;
@@ -71,119 +49,48 @@ h1{
   text-decoration:none;
   color:#172d4d;
   font-weight:bold;
-  word-break:break-word;
 }
 
-.loading{
+.back{
+  display:block;
   text-align:center;
-  font-size:18px;
-  grid-column:1/-1;
+  margin:30px 0;
+  color:#e87991;
+  font-weight:bold;
+  text-decoration:none;
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-<a class="back" href="../">
-← 1–4-класстарга кайтуу
-</a>
-
 <h1>🔢 Математика — 2-класс</h1>
-
-<p class="subtitle">
-Дидактикалык материалдар
-</p>
 
 <div id="materials">
 
-  <div class="loading">
-    ⏳ Материалдар жүктөлүүдө...
+  <div class="card">
+    <a href="../1757157107860.jpg" target="_blank">
+      <img src="../1757157107860.jpg">
+    </a>
+    <a href="../1757157107860.jpg" target="_blank">
+      📄 1757157107860.jpg
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="../1757157111517.jpg" target="_blank">
+      <img src="../1757157111517.jpg">
+    </a>
+    <a href="../1757157111517.jpg" target="_blank">
+      📄 1757157111517.jpg
+    </a>
   </div>
 
 </div>
 
-</div>
-
-
-<script>
-
-const owner = "taalajkulidirisova-teacher";
-
-const repo = "talaykulidirisova--teacher";
-
-const folder =
-"Математика/Дидактикалык материалдар/2-класс";
-
-const api =
-`https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(folder)}`;
-
-fetch(api)
-
-.then(response => response.json())
-
-.then(files => {
-
-  const box = document.getElementById("materials");
-
-  box.innerHTML = "";
-
-  if (!Array.isArray(files)) {
-
-    box.innerHTML =
-    "<p class='loading'>Материалдар табылган жок.</p>";
-
-    return;
-  }
-
-  files
-  .filter(file =>
-    /\.(jpg|jpeg|png|webp|gif|pdf)$/i.test(file.name)
-  )
-  .forEach(file => {
-
-    const card = document.createElement("div");
-
-    card.className = "card";
-
-    if (/\.(jpg|jpeg|png|webp|gif)$/i.test(file.name)) {
-
-      card.innerHTML = `
-        <a href="${file.download_url}" target="_blank">
-          <img src="${file.download_url}" alt="${file.name}">
-        </a>
-
-        <a href="${file.download_url}" target="_blank">
-          📄 ${file.name}
-        </a>
-      `;
-
-    } else {
-
-      card.innerHTML = `
-        <a href="${file.download_url}" target="_blank">
-          📚 ${file.name}
-        </a>
-      `;
-
-    }
-
-    box.appendChild(card);
-
-  });
-
-})
-
-.catch(error => {
-
-  document.getElementById("materials").innerHTML =
-  "<p class='loading'>❌ Материалдарды жүктөөдө ката кетти.</p>";
-
-});
-
-</script>
+<a class="back" href="../">
+  ← Дидактикалык материалдарга кайтуу
+</a>
 
 </body>
 </html>
