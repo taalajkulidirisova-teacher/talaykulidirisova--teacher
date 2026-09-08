@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ky">
 <head>
@@ -21,7 +22,7 @@ h1{
 }
 
 #materials{
-  max-width:900px;
+  max-width:1000px;
   margin:auto;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -49,6 +50,7 @@ h1{
   text-decoration:none;
   color:#172d4d;
   font-weight:bold;
+  word-break:break-word;
 }
 
 .loading{
@@ -101,10 +103,8 @@ fetch(api)
   box.innerHTML = "";
 
   if (!Array.isArray(files)) {
-
     box.innerHTML =
       "<p class='loading'>Материалдар табылган жок.</p>";
-
     return;
   }
 
