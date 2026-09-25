@@ -449,4 +449,883 @@ section{
 
 .gallery-card img{
   width:100%;
-  height:230
+  height:230px;
+  object-fit:cover;
+  display:block;
+}
+
+/* ===== EVENTS ===== */
+
+.events{
+  background:#f7f2ff;
+}
+
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.event{
+  padding:30px;
+  background:white;
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.06);
+}
+
+.event .icon{
+  font-size:42px;
+  margin-bottom:8px;
+}
+
+/* ===== CONTACT ===== */
+
+.contact{
+  background:#263b61;
+  color:white;
+}
+
+.contact .section-title{
+  color:white;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+  text-align:center;
+}
+
+.contact-card{
+  padding:28px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:20px;
+  background:rgba(255,255,255,.05);
+}
+
+.contact-card .icon{
+  font-size:38px;
+  margin-bottom:8px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+  background:#172941;
+  color:white;
+  text-align:center;
+  padding:28px 20px;
+}
+
+.quote{
+  font-size:17px;
+  margin-bottom:10px;
+  font-style:italic;
+}
+
+/* ===== MODAL ===== */
+
+.modal{
+  display:none;
+  position:fixed;
+  z-index:5000;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.82);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal img{
+  max-width:95%;
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:10px;
+  background:white;
+}
+
+.close{
+  position:absolute;
+  top:15px;
+  right:30px;
+  color:white;
+  font-size:45px;
+  cursor:pointer;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:850px){
+
+  header{
+    position:relative;
+  }
+
+  .nav{
+    flex-direction:column;
+  }
+
+  nav a{
+    font-size:13px;
+    margin:4px 6px;
+  }
+
+  .hero{
+    min-height:570px;
+    padding:50px 20px;
+  }
+
+  .photo-frame{
+    width:175px;
+    height:175px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero h2{
+    font-size:20px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .about-grid,
+  .principle-grid,
+  .subject-grid,
+  .document-grid,
+  .event-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .certificate-grid,
+  .gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .extra-materials{
+    grid-template-columns:1fr;
+  }
+
+  .classes{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  section{
+    padding:55px 5%;
+  }
+
+  .section-title{
+    font-size:27px;
+  }
+}
+
+@media(max-width:500px){
+
+  .certificate-grid,
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .certificate-card img{
+    height:300px;
+  }
+
+  .logo{
+    font-size:19px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+
+<header>
+  <div class="nav">
+
+    <div class="logo">
+      🌷 Талайкүл мугалим
+    </div>
+
+    <nav>
+      <a href="#home">Башкы бет</a>
+      <a href="#documents">ЖББ документтери</a>
+      <a href="#about">Мен жөнүндө</a>
+      <a href="#materials">Материалдар</a>
+      <a href="#certificates">Сертификаттар</a>
+      <a href="#gallery">Сүрөттөр</a>
+      <a href="#contact">Байланыш</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- ===== HERO ===== -->
+
+<section class="hero" id="home">
+
+  <div class="hero-box">
+
+    <div class="photo-frame">
+      <img src="teacher-photo.png"
+           alt="Идирисова Талайкүл Орозобековна">
+    </div>
+
+    <h1>Идирисова Талайкүл Орозобековна</h1>
+
+    <h2>Башталгыч класстын мугалими</h2>
+
+    <p>
+      Окуучуларга билим берүү менен бирге алардын өз алдынча
+      ой жүгүртүүсүн, чыгармачылыгын, жоопкерчилигин жана
+      өзүнө болгон ишенимин өнүктүрүү — менин негизги максатым.
+    </p>
+
+    <a class="button" href="#materials">
+      📚 Окуу материалдарын көрүү
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ===== ЖББ ДОКУМЕНТТЕРИ ===== -->
+
+<section class="documents" id="documents">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      📄 <span>Жалпы билим берүү документтери</span>
+    </h2>
+
+    <div class="document-grid">
+
+      <div class="document-card">
+
+        <div class="document-icon">📘</div>
+
+        <h3>Базистик окуу планы (БОП) 2026</h3>
+
+        <p>
+          Жалпы билим берүү уюмдары үчүн
+          базистик окуу планы.
+        </p>
+
+        <a class="document-button"
+           href="ЖББ%20документтери/Базистик%20окуу%20планы%20(БОП)%202026.pdf"
+           target="_blank">
+          📖 Документти ачуу
+        </a>
+
+      </div>
+
+
+      <div class="document-card">
+
+        <div class="document-icon">📕</div>
+
+        <h3>Мамлекеттик билим берүү стандарты</h3>
+
+        <p>
+          Жалпы билим берүүнүн мамлекеттик
+          билим берүү стандарты.
+        </p>
+
+        <a class="document-button"
+           href="ЖББ%20документтери/Жалпы-билим-берүүнүн-мамлекеттик-билим-берүү-стандарты.pdf"
+           target="_blank">
+          📖 Документти ачуу
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== ABOUT ===== -->
+
+<section class="about" id="about">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      👩‍🏫 <span>Мен жөнүндө</span>
+    </h2>
+
+    <div class="about-grid">
+
+      <div class="info-card">
+        <div class="icon">🏫</div>
+        <h3>Мектеп</h3>
+        <p>
+          Ой-Терскен жалпы билим берүү мектеби
+        </p>
+      </div>
+
+      <div class="info-card">
+        <div class="icon">📚</div>
+        <h3>Педагогикалык стаж</h3>
+        <p>15 жыл</p>
+      </div>
+
+      <div class="info-card">
+        <div class="icon">🎓</div>
+        <h3>Билимим</h3>
+        <p>Педагогика магистри</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== PRINCIPLES ===== -->
+
+<section class="principles">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      🌱 <span>Менин педагогикалык принциптерим</span>
+    </h2>
+
+    <div class="principle-grid">
+
+      <div class="principle">
+        <h3>❤️ Мээрим</h3>
+        <p>
+          Ар бир балага жылуу мамиле жасап,
+          анын өзгөчөлүгүн сыйлоо.
+        </p>
+      </div>
+
+      <div class="principle">
+        <h3>💡 Чыгармачылык</h3>
+        <p>
+          Сабакта жаңы ыкмаларды колдонуп,
+          окуучунун кызыгуусун арттыруу.
+        </p>
+      </div>
+
+      <div class="principle">
+        <h3>🌟 Өнүгүү</h3>
+        <p>
+          Окуучуну өз алдынча ойлонууга,
+          изденүүгө жана үйрөнүүгө багыттоо.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== MATERIALS ===== -->
+
+<section class="materials" id="materials">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      📚 <span>Окуу материалдары</span>
+    </h2>
+
+    <div class="subject-grid">
+
+
+      <!-- МАТЕМАТИКА -->
+
+      <div class="subject">
+
+        <div class="subject-icon">🧮</div>
+
+        <h3>Математика</h3>
+
+        <p>
+          Сабактын иштелмелери, дидактикалык материалдар,
+          КТП, предметтик стандарт жана ачык сабактар.
+        </p>
+
+        <a class="button"
+           href="Математика/classes.html">
+          Көрүү →
+        </a>
+
+      </div>
+
+
+      <!-- КЫРГЫЗ ТИЛИ -->
+
+      <div class="subject">
+
+        <div class="subject-icon">📖</div>
+
+        <h3>Кыргыз тили</h3>
+
+        <p>
+          Кыргыз тили боюнча сабактар,
+          көнүгүүлөр жана дидактикалык материалдар.
+        </p>
+
+        <div class="classes">
+
+          <a class="class-btn"
+             href="Кыргыз%20тили/1-класс/">
+             1-класс
+          </a>
+
+          <a class="class-btn"
+             href="Кыргыз%20тили/2-класс/">
+             2-класс
+          </a>
+
+          <a class="class-btn"
+             href="Кыргыз%20тили/3-класс/">
+             3-класс
+          </a>
+
+          <a class="class-btn"
+             href="Кыргыз%20тили/4-класс/">
+             4-класс
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- АДАБИЙ ОКУУ -->
+
+      <div class="subject">
+
+        <div class="subject-icon">📚</div>
+
+        <h3>Адабий окуу</h3>
+
+        <p>
+          Окуу тексттери, суроолор,
+          чыгармачылык тапшырмалар жана оюндар.
+        </p>
+
+        <div class="classes">
+
+          <a class="class-btn"
+             href="Адабий%20окуу/1-класс/">
+             1-класс
+          </a>
+
+          <a class="class-btn"
+             href="Адабий%20окуу/2-класс/">
+             2-класс
+          </a>
+
+          <a class="class-btn"
+             href="Адабий%20окуу/3-класс/">
+             3-класс
+          </a>
+
+          <a class="class-btn"
+             href="Адабий%20окуу/4-класс/">
+             4-класс
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- ДҮЙНӨ ТААНУУ -->
+
+      <div class="subject">
+
+        <div class="subject-icon">🌍</div>
+
+        <h3>Дүйнө таануу</h3>
+
+        <p>
+          Табият, коом, адам жана айлана-чөйрө
+          боюнча окуу материалдары.
+        </p>
+
+        <div class="classes">
+
+          <a class="class-btn"
+             href="Дүйнө%20таануу/1-класс/">
+             1-класс
+          </a>
+
+          <a class="class-btn"
+             href="Дүйнө%20таануу/2-класс/">
+             2-класс
+          </a>
+
+          <a class="class-btn"
+             href="Дүйнө%20таануу/3-класс/">
+             3-класс
+          </a>
+
+          <a class="class-btn"
+             href="Дүйнө%20таануу/4-класс/">
+             4-класс
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- КОШУМЧА БӨЛҮМДӨР -->
+
+    <div class="extra-materials">
+
+      <div class="extra-card">
+        <div class="icon">📸</div>
+        <h3>Сүрөттөр</h3>
+        <p>Мектептеги кызыктуу учурлар.</p>
+        <a href="#gallery">Көрүү</a>
+      </div>
+
+      <div class="extra-card">
+        <div class="icon">🎥</div>
+        <h3>Видеолор</h3>
+        <p>Сабактар жана иш-чаралар.</p>
+        <a href="Видеолор/">Көрүү</a>
+      </div>
+
+      <div class="extra-card">
+        <div class="icon">📑</div>
+        <h3>Презентациялар</h3>
+        <p>Сабактар үчүн даяр презентациялар.</p>
+        <a href="Презентациялар/">Көрүү</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== CERTIFICATES ===== -->
+
+<section class="certificates" id="certificates">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      🏆 <span>Сертификаттар жана жетишкендиктер</span>
+    </h2>
+
+    <p class="certificate-note">
+      Педагогикалык ишмердүүлүккө байланыштуу сертификаттар,
+      дипломдор жана жетишкендиктер.
+    </p>
+
+    <div id="certificateGrid" class="certificate-grid">
+
+      <div class="no-certificates">
+        ⏳ Сертификаттар жүктөлүүдө...
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== GALLERY ===== -->
+
+<section class="gallery" id="gallery">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      📸 <span>Сүрөттөр</span>
+    </h2>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="teacher-photo.png"
+             alt="Талайкүл мугалим">
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:30px;">
+      <a class="button" href="Сүрөттөр/">
+        📸 Бардык сүрөттөрдү көрүү
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== EVENTS ===== -->
+
+<section class="events">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      🎉 <span>Иш-чаралар</span>
+    </h2>
+
+    <div class="event-grid">
+
+      <div class="event">
+        <div class="icon">🎓</div>
+        <h3>Ачык сабактар</h3>
+        <p>
+          Окуучулардын активдүү катышуусу менен
+          кызыктуу сабактар.
+        </p>
+      </div>
+
+      <div class="event">
+        <div class="icon">🎨</div>
+        <h3>Чыгармачылык иштер</h3>
+        <p>
+          Окуучулардын чыгармачылык жөндөмдөрүн
+          өнүктүрүүчү иштер.
+        </p>
+      </div>
+
+      <div class="event">
+        <div class="icon">🌟</div>
+        <h3>Мектептик иш-чаралар</h3>
+        <p>
+          Майрамдык жана тарбиялык иш-чаралар.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== CONTACT ===== -->
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      📞 Байланыш
+    </h2>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="icon">👩‍🏫</div>
+        <h3>Мугалим</h3>
+        <p>
+          Идирисова Талайкүл Орозобековна
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon">🏫</div>
+        <h3>Мектеп</h3>
+        <p>
+          Ой-Терскен жалпы билим берүү мектеби
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+  <div class="quote">
+    «Мугалим деген — жөн гана кесип эмес,
+    ал — жүрөктүн иши.»
+  </div>
+
+  <p>
+    © 2026 Идирисова Талайкүл Орозобековна.
+  </p>
+
+</footer>
+
+
+<!-- ===== IMAGE MODAL ===== -->
+
+<div class="modal" id="imageModal">
+
+  <span class="close" onclick="closeModal()">×</span>
+
+  <img id="modalImage" src="" alt="Сертификат">
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   СЕРТИФИКАТТАРДЫ GITHUB РЕПОЗИТОРИЙДЕН АВТОМАТТЫ ТАБУУ
+   ===================================================== */
+
+const certificateGrid =
+document.getElementById("certificateGrid");
+
+const githubApi =
+"https://api.github.com/repos/taalajkulidirisova-teacher/talaykulidirisova--teacher/git/trees/main?recursive=1";
+
+fetch(githubApi)
+.then(response => response.json())
+.then(data => {
+
+  if(!data.tree){
+    throw new Error("Файлдар табылган жок");
+  }
+
+  const imageFiles = data.tree.filter(item => {
+
+    const path = item.path.toLowerCase();
+
+    const isImage =
+      path.endsWith(".jpg") ||
+      path.endsWith(".jpeg") ||
+      path.endsWith(".png") ||
+      path.endsWith(".webp");
+
+    const isCertificate =
+      path.includes("сертификат") ||
+      path.includes("certificate") ||
+      path.includes("диплом") ||
+      path.includes("жетишкендик");
+
+    return isImage && isCertificate;
+  });
+
+  certificateGrid.innerHTML = "";
+
+  if(imageFiles.length === 0){
+
+    certificateGrid.innerHTML = `
+      <div class="no-certificates"
+           style="grid-column:1/-1;">
+        🏆 Сертификаттар жакында бул жерге
+        сүрөттөрү менен жайгаштырылат.
+      </div>
+    `;
+
+    return;
+  }
+
+  imageFiles.forEach(file => {
+
+    const rawUrl =
+      "https://raw.githubusercontent.com/" +
+      "taalajkulidirisova-teacher/" +
+      "talaykulidirisova--teacher/main/" +
+      file.path
+      .split("/")
+      .map(part => encodeURIComponent(part))
+      .join("/");
+
+    const card =
+      document.createElement("div");
+
+    card.className =
+      "certificate-card";
+
+    card.innerHTML = `
+      <img
+        src="${rawUrl}"
+        alt="Сертификат"
+        onclick="openModal('${rawUrl}')"
+      >
+      <p>🏆 Сертификат</p>
+    `;
+
+    certificateGrid.appendChild(card);
+
+  });
+
+})
+.catch(error => {
+
+  certificateGrid.innerHTML = `
+    <div class="no-certificates"
+         style="grid-column:1/-1;">
+      🏆 Сертификаттар бөлүмү даяр.
+      Сүрөттөрүңүз сертификат папкасына
+      жүктөлгөндө автоматтык түрдө чыгат.
+    </div>
+  `;
+
+});
+
+
+/* ===== СЕРТИФИКАТТЫ ЧОҢОЙТУП КӨРҮҮ ===== */
+
+function openModal(imageUrl){
+
+  const modal =
+    document.getElementById("imageModal");
+
+  const image =
+    document.getElementById("modalImage");
+
+  image.src = imageUrl;
+
+  modal.style.display = "flex";
+}
+
+
+function closeModal(){
+
+  document.getElementById("imageModal")
+    .style.display = "none";
+}
+
+
+document
+.getElementById("imageModal")
+.addEventListener("click",function(e){
+
+  if(e.target === this){
+    closeModal();
+  }
+
+});
+
+</script>
+
+</body>
+</html>
