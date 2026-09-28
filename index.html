@@ -7,211 +7,475 @@
 <title>Талайкүл Идирисова — Мугалим</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #fff5f8, #eef9ff, #f3fff6);
-    color: #444;
-    line-height: 1.6;
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#fff4f7,#f1f8ff,#f7fff5);
+    color:#444;
+    line-height:1.6;
 }
 
-header {
-    background: linear-gradient(135deg, #e87991, #d96d87, #b982c9);
-    color: white;
-    text-align: center;
-    padding: 35px 20px 45px;
-    border-radius: 0 0 35px 35px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+header{
+    background:linear-gradient(135deg,#e87991,#d96d87,#b86fa8);
+    color:white;
+    text-align:center;
+    padding:35px 20px 45px;
+    border-radius:0 0 35px 35px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 25px;
+.logo{
+    font-size:27px;
+    font-weight:bold;
+    margin-bottom:25px;
 }
 
-.hero {
-    max-width: 900px;
-    margin: auto;
+.photo{
+    width:190px;
+    height:190px;
+    object-fit:cover;
+    border-radius:50%;
+    border:7px solid white;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    background:white;
 }
 
-.photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 7px solid white;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    margin-bottom: 15px;
+header h1{
+    margin-top:20px;
+    font-size:30px;
 }
 
-.hero h1 {
-    font-size: 32px;
-    margin-bottom: 8px;
+header p{
+    font-size:18px;
+    margin-top:8px;
 }
 
-.hero p {
-    font-size: 18px;
+.school{
+    font-weight:bold;
+    margin-top:10px;
 }
 
-.school {
-    margin-top: 12px;
-    font-size: 16px;
-    opacity: 0.95;
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 18px;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 35px auto;
-    padding: 0 18px;
+section{
+    background:white;
+    margin:25px 0;
+    padding:30px 22px;
+    border-radius:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-section {
-    margin-bottom: 35px;
+section h2{
+    text-align:center;
+    color:#d45f7b;
+    margin-bottom:22px;
+    font-size:25px;
 }
 
-.section-title {
-    text-align: center;
-    color: #c95778;
-    font-size: 27px;
-    margin-bottom: 22px;
+.about{
+    text-align:center;
+    font-size:18px;
 }
 
-.card {
-    background: rgba(255,255,255,0.9);
-    border-radius: 25px;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border: 1px solid #f3dce4;
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    margin-top:20px;
 }
 
-.about {
-    text-align: center;
+.info div{
+    padding:18px;
+    border-radius:18px;
+    background:#fff0f4;
+    text-align:center;
 }
 
-.about p {
-    font-size: 17px;
-    margin-bottom: 10px;
+.info strong{
+    display:block;
+    color:#c95673;
+    margin-bottom:5px;
 }
 
-.info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+.principles{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
 }
 
-.info div {
-    background: #fff4f7;
-    padding: 15px;
-    border-radius: 18px;
-    text-align: center;
+.card{
+    padding:23px;
+    border-radius:20px;
+    text-align:center;
+    background:linear-gradient(135deg,#fff1f5,#f5f9ff);
+    border:2px solid #f4d9e2;
 }
 
-.principles {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
+.card .icon{
+    font-size:40px;
+    margin-bottom:8px;
 }
 
-.principle {
-    text-align: center;
-    padding: 25px 18px;
-    border-radius: 22px;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+.card h3{
+    color:#c95673;
+    margin-bottom:8px;
 }
 
-.principle .icon {
-    font-size: 38px;
-    margin-bottom: 10px;
+.materials{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
 }
 
-.principle h3 {
-    color: #c95778;
-    margin-bottom: 8px;
+.subject{
+    padding:25px;
+    border-radius:22px;
+    text-align:center;
+    color:white;
+    box-shadow:0 6px 15px rgba(0,0,0,.12);
 }
 
-.materials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+.subject:nth-child(1){
+    background:linear-gradient(135deg,#f28ca5,#e46f8c);
 }
 
-.subject {
-    background: white;
-    border-radius: 25px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-    border-top: 6px solid #e87991;
+.subject:nth-child(2){
+    background:linear-gradient(135deg,#75c9b8,#55a99a);
 }
 
-.subject:nth-child(2) {
-    border-top-color: #7bb7d8;
+.subject:nth-child(3){
+    background:linear-gradient(135deg,#8fa9e8,#718bd0);
 }
 
-.subject:nth-child(3) {
-    border-top-color: #91c99b;
+.subject:nth-child(4){
+    background:linear-gradient(135deg,#e6b76d,#d69b42);
 }
 
-.subject:nth-child(4) {
-    border-top-color: #e6b96a;
+.subject .big{
+    font-size:42px;
 }
 
-.subject-icon {
-    font-size: 45px;
+.subject h3{
+    font-size:22px;
+    margin:10px 0;
 }
 
-.subject h3 {
-    color: #555;
-    margin: 10px 0;
+.subject p{
+    font-size:15px;
+    margin-bottom:15px;
 }
 
-.subject p {
-    font-size: 14px;
-    color: #777;
+.button{
+    display:inline-block;
+    text-decoration:none;
+    color:#555;
+    background:white;
+    padding:9px 17px;
+    border-radius:20px;
+    margin:4px;
+    font-size:14px;
+    transition:.2s;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #e87991;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: 0.3s;
+.button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
 }
 
-.btn:hover {
-    background: #c95778;
-    transform: translateY(-2px);
+.documents{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
 }
 
-.certificates {
-    text-align: center;
+.doc{
+    background:#f8f0ff;
+    padding:22px;
+    border-radius:20px;
+    text-align:center;
 }
 
-.certificates p {
-    margin-bottom: 10px;
+.doc a{
+    display:inline-block;
+    margin-top:10px;
+    padding:9px 18px;
+    background:#9b70bd;
+    color:white;
+    text-decoration:none;
+    border-radius:20px;
 }
 
-.contact {
-    text-align: center;
+.certificates{
+    text-align:center;
+    padding:30px;
+    background:#fff8e9;
+    border-radius:20px;
 }
 
-.quote {
-    text-align: center;
-    background: linear-gradient(135deg, #fff0f5, #f1f8ff);
-    border-radius: 25px;
-    padding: 30px;
-    font-size: 21px;
-    font-style: italic;
-    color: #9d536
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px;
+    font-size:17px;
+}
+
+footer{
+    text-align:center;
+    color:white;
+    background:#d96d87;
+    padding:25px 15px;
+    margin-top:30px;
+}
+
+.flower{
+    font-size:25px;
+    margin:0 5px;
+}
+
+@media(max-width:600px){
+    header h1{
+        font-size:24px;
+    }
+
+    .photo{
+        width:160px;
+        height:160px;
+    }
+
+    section{
+        padding:24px 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🌷 Талайкүл мугалим 🌷
+</div>
+
+<img src="teacher-photo.png"
+     class="photo"
+     alt="Талайкүл Идирисова">
+
+<h1>Идирисова Талайкүл Орозобековна</h1>
+
+<p>Башталгыч класстын мугалими</p>
+
+<p class="school">
+Ой-Терскен инновациялык жалпы билим берүү мектеби
+</p>
+
+</header>
+
+
+<div class="container">
+
+<section>
+
+<h2>🌸 Мен жөнүндө</h2>
+
+<div class="about">
+
+<p>
+Мен — башталгыч класстын мугалими, окуучулардын билимге болгон
+кызыгуусун арттырып, алардын чыгармачылыгын жана өз алдынча
+ой жүгүртүүсүн өнүктүрүүгө аракет кылам.
+</p>
+
+<div class="info">
+
+<div>
+<strong>🎓 Билимим</strong>
+Педагогика магистри
+</div>
+
+<div>
+<strong>👩‍🏫 Иш тажрыйбам</strong>
+15 жыл
+</div>
+
+<div>
+<strong>🏫 Мектебим</strong>
+Ой-Терскен инновациялык жалпы билим берүү мектеби
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>💗 Педагогикалык принциптерим</h2>
+
+<div class="principles">
+
+<div class="card">
+<div class="icon">❤️</div>
+<h3>Мээрим</h3>
+<p>Ар бир окуучуну урматтоо жана колдоо.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>Чыгармачылык</h3>
+<p>Кызыктуу жана чыгармачыл сабактарды уюштуруу.</p>
+</div>
+
+<div class="card">
+<div class="icon">🌱</div>
+<h3>Өнүгүү</h3>
+<p>Окуучунун жөндөмүн ар тараптуу өнүктүрүү.</p>
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:25px;font-style:italic;color:#b85d77;font-size:19px;">
+«Мугалим деген — жөн гана кесип эмес, ал — жүрөктүн иши.»
+</p>
+
+</section>
+
+
+<section>
+
+<h2>📚 Окуу материалдары</h2>
+
+<div class="materials">
+
+<div class="subject">
+<div class="big">➗</div>
+<h3>Математика</h3>
+<p>1–4-класстар үчүн окуу материалдары</p>
+
+<a class="button" href="Математика/">📂 Материалдар</a>
+</div>
+
+
+<div class="subject">
+<div class="big">📖</div>
+<h3>Кыргыз тили</h3>
+<p>1–4-класстар үчүн окуу материалдары</p>
+
+<a class="button" href="Кыргыз тили/">📂 Материалдар</a>
+</div>
+
+
+<div class="subject">
+<div class="big">📕</div>
+<h3>Адабий окуу</h3>
+<p>1–4-класстар үчүн окуу материалдары</p>
+
+<a class="button" href="Адабий окуу/">📂 Материалдар</a>
+</div>
+
+
+<div class="subject">
+<div class="big">🌍</div>
+<h3>Дүйнө таануу</h3>
+<p>1–4-класстар үчүн окуу материалдары</p>
+
+<a class="button" href="Дүйнө таануу/">📂 Материалдар</a>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>📑 ЖББ документтери</h2>
+
+<div class="documents">
+
+<div class="doc">
+<h3>📘 Базистик окуу планы</h3>
+<p>2026-жыл</p>
+<a href="ЖББ документтери/">Көрүү</a>
+</div>
+
+<div class="doc">
+<h3>📗 Мамлекеттик билим берүү стандарты</h3>
+<p>Жалпы билим берүү боюнча документ</p>
+<a href="ЖББ документтери/">Көрүү</a>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>🏆 Сертификаттар</h2>
+
+<div class="certificates">
+
+<p>
+Бул бөлүмдө мугалимдин сертификаттары,
+дипломдору жана жетишкендиктери жайгаштырылат.
+</p>
+
+<br>
+
+<a class="button"
+   href="Сертификаттар/">
+📜 Сертификаттарды көрүү
+</a>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>📞 Байланыш</h2>
+
+<div class="contact">
+
+<p>👩‍🏫 <strong>Талайкүл Идирисова</strong></p>
+
+<p>🏫 Ой-Терскен инновациялык жалпы билим берүү мектеби</p>
+
+<p>🌷 Башталгыч класстын мугалими</p>
+
+</div>
+
+</section>
+
+</div>
+
+
+<footer>
+
+<span class="flower">🌷</span>
+Талайкүл Идирисова
+<span class="flower">🌷</span>
+
+<br>
+
+Окутуу • Өнүгүү • Чыгармачылык • Ийгилик
+
+</footer>
+
+</body>
+</html>
