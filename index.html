@@ -4,225 +4,214 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Идирисова Талайкүл — Мугалим</title>
+<title>Талайкүл Идирисова — Мугалим</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html{
-    scroll-behavior:smooth;
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff5f8, #eef9ff, #f3fff6);
+    color: #444;
+    line-height: 1.6;
 }
 
-body{
-    font-family:Georgia,"Times New Roman",serif;
-    background:#fffdfb;
-    color:#14284b;
+header {
+    background: linear-gradient(135deg, #e87991, #d96d87, #b982c9);
+    color: white;
+    text-align: center;
+    padding: 35px 20px 45px;
+    border-radius: 0 0 35px 35px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 25px;
 }
 
-.container{
-    width:min(1180px,92%);
-    margin:auto;
+.hero {
+    max-width: 900px;
+    margin: auto;
 }
 
-/* ===== HEADER ===== */
-
-header{
-    height:72px;
-    background:#fff;
-    display:flex;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 18px rgba(0,0,0,.07);
+.photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 7px solid white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    margin-bottom: 15px;
 }
 
-.header-inner{
-    width:min(1200px,94%);
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
 }
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-size:21px;
-    font-weight:bold;
-    color:#102b52;
+.hero p {
+    font-size: 18px;
 }
 
-.logo span{
-    color:#ed7892;
+.school {
+    margin-top: 12px;
+    font-size: 16px;
+    opacity: 0.95;
 }
 
-.logo-icon{
-    font-size:32px;
+.container {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 18px;
 }
 
-nav{
-    display:flex;
-    align-items:center;
-    gap:25px;
+section {
+    margin-bottom: 35px;
 }
 
-nav a{
-    font-family:Arial,sans-serif;
-    font-size:13px;
-    font-weight:bold;
-    transition:.3s;
+.section-title {
+    text-align: center;
+    color: #c95778;
+    font-size: 27px;
+    margin-bottom: 22px;
 }
 
-nav a:hover,
-nav a.active{
-    color:#ed7892;
+.card {
+    background: rgba(255,255,255,0.9);
+    border-radius: 25px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border: 1px solid #f3dce4;
 }
 
-.contact-btn{
-    background:#ed7892;
-    color:white;
-    padding:13px 24px;
-    border-radius:30px;
-    font-family:Arial,sans-serif;
-    font-size:13px;
-    font-weight:bold;
+.about {
+    text-align: center;
 }
 
-.menu-btn{
-    display:none;
-    font-size:28px;
+.about p {
+    font-size: 17px;
+    margin-bottom: 10px;
 }
 
-/* ===== HERO ===== */
-
-.hero{
-    min-height:480px;
-    padding:35px 0 0;
-    background:
-        radial-gradient(circle at 5% 20%,#e8f5fa 0,transparent 17%),
-        radial-gradient(circle at 90% 20%,#fff0f3 0,transparent 18%),
-        linear-gradient(135deg,#fffdf9,#fff8f5);
-    overflow:hidden;
+.info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.hero-inner{
-    width:min(1180px,92%);
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
+.info div {
+    background: #fff4f7;
+    padding: 15px;
+    border-radius: 18px;
+    text-align: center;
 }
 
-.hero-text{
-    padding-left:45px;
+.principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
 }
 
-.script{
-    color:#ed7892;
-    font-size:21px;
-    font-style:italic;
-    margin-bottom:10px;
+.principle {
+    text-align: center;
+    padding: 25px 18px;
+    border-radius: 22px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
 }
 
-.hero h1{
-    color:#102b52;
-    font-size:43px;
-    line-height:1.02;
-    margin-bottom:14px;
+.principle .icon {
+    font-size: 38px;
+    margin-bottom: 10px;
 }
 
-.school-name{
-    color:#31506f;
-    font-size:15px;
-    font-weight:bold;
-    line-height:1.4;
-    margin-bottom:7px;
+.principle h3 {
+    color: #c95778;
+    margin-bottom: 8px;
 }
 
-.subtitle{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:16px;
-    font-weight:bold;
-    margin-bottom:22px;
+.materials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
 }
 
-.subtitle:before,
-.subtitle:after{
-    content:"";
-    width:35px;
-    height:1px;
-    background:#cba45c;
+.subject {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    border-top: 6px solid #e87991;
 }
 
-.quote{
-    position:relative;
-    padding-left:35px;
-    max-width:490px;
-    color:#394960;
-    font-size:14px;
-    line-height:1.6;
-    margin-bottom:23px;
+.subject:nth-child(2) {
+    border-top-color: #7bb7d8;
 }
 
-.quote:before{
-    content:"“";
-    position:absolute;
-    left:0;
-    top:-13px;
-    color:#f3c5cf;
-    font-size:55px;
+.subject:nth-child(3) {
+    border-top-color: #91c99b;
 }
 
-.buttons{
-    display:flex;
-    gap:13px;
-    flex-wrap:wrap;
+.subject:nth-child(4) {
+    border-top-color: #e6b96a;
 }
 
-.btn{
-    padding:13px 23px;
-    border-radius:30px;
-    font-family:Arial,sans-serif;
-    font-size:13px;
-    font-weight:bold;
+.subject-icon {
+    font-size: 45px;
 }
 
-.btn-blue{
-    background:#102b52;
-    color:#fff;
+.subject h3 {
+    color: #555;
+    margin: 10px 0;
 }
 
-.btn-pink{
-    background:#ed7892;
-    color:#fff;
+.subject p {
+    font-size: 14px;
+    color: #777;
 }
 
-.hero-photo{
-    height:430px;
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
-    position:relative;
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #e87991;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
 }
 
-.photo-circle{
-    width:395px;
-    height:395px;
-    border-radius:50%;
-    background:#f8dce0;
-    border:3px solid #d9bb79;
-    outline:1px
+.btn:hover {
+    background: #c95778;
+    transform: translateY(-2px);
+}
+
+.certificates {
+    text-align: center;
+}
+
+.certificates p {
+    margin-bottom: 10px;
+}
+
+.contact {
+    text-align: center;
+}
+
+.quote {
+    text-align: center;
+    background: linear-gradient(135deg, #fff0f5, #f1f8ff);
+    border-radius: 25px;
+    padding: 30px;
+    font-size: 21px;
+    font-style: italic;
+    color: #9d536
