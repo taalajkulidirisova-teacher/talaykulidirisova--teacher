@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Идирисова Талайкүл — Мугалим 🌷</title>
+<title>Идирисова Талайкүл Орозобековна — Мугалим</title>
 
 <style>
+
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html{
@@ -18,667 +19,2042 @@ html{
 }
 
 body{
-    font-family:"Segoe UI",Arial,sans-serif;
-    color:#514452;
-    background:
-        radial-gradient(circle at 10% 10%,rgba(255,255,255,.8) 0 45px,transparent 46px),
-        radial-gradient(circle at 90% 20%,rgba(255,255,255,.7) 0 35px,transparent 36px),
-        linear-gradient(135deg,#fff3f7,#f0f8ff,#effbf5,#fff8ed);
-    background-attachment:fixed;
+    font-family:"Segoe UI", Arial, sans-serif;
+    color:#263f61;
+    background:#fffdfb;
     overflow-x:hidden;
 }
 
-body:before,
-body:after{
-    content:"🌷";
-    position:fixed;
-    font-size:80px;
-    opacity:.18;
-    z-index:-1;
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
-body:before{
-    left:-15px;
-    top:100px;
-    transform:rotate(-18deg);
+/* =========================
+   HEADER / NAVIGATION
+========================= */
+
+.topbar{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,255,255,.97);
+    backdrop-filter:blur(12px);
+    box-shadow:0 2px 18px rgba(40,60,90,.08);
 }
 
-body:after{
-    right:-10px;
-    bottom:40px;
-    transform:rotate(15deg);
-}
-
-header{
-    position:relative;
-    padding:25px 6%;
-    background:linear-gradient(135deg,#e87991,#dca1bd,#9bc9d8);
-    color:white;
-    box-shadow:0 5px 20px rgba(100,70,90,.15);
-}
-
-nav{
-    max-width:1100px;
+.nav{
+    width:min(1120px,92%);
     margin:auto;
+    min-height:68px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    gap:15px;
+    justify-content:space-between;
+    gap:18px;
 }
 
 .logo{
-    font-size:25px;
-    font-weight:800;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:18px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:600;
-    font-size:15px;
-}
-
-.hero{
-    max-width:1100px;
-    margin:40px auto 10px;
     display:flex;
     align-items:center;
-    justify-content:center;
-    gap:55px;
-    text-align:left;
+    gap:8px;
+    font-family:Georgia,serif;
+    font-size:21px;
+    font-weight:700;
+    color:#183d68;
+    white-space:nowrap;
 }
 
-.photo-box{
-    width:230px;
-    height:230px;
+.logo-mark{
+    font-size:30px;
+}
+
+.nav-links{
+    display:flex;
+    gap:5px;
+    align-items:center;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:12px;
+    font-weight:700;
+    padding:10px 12px;
+    border-radius:22px;
+    color:#29435f;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    background:#fff0f4;
+    color:#df6687;
+}
+
+.nav-btn{
+    background:#ed6b8c;
+    color:white;
+    padding:11px 19px;
+    border-radius:25px;
+    font-size:12px;
+    font-weight:700;
+    box-shadow:0 7px 16px rgba(237,107,140,.22);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(
+            circle at 77% 45%,
+            rgba(255,181,202,.35),
+            transparent 27%
+        ),
+        linear-gradient(
+            110deg,
+            #fffaf7 0%,
+            #fff7f5 46%,
+            #f7fbff 100%
+        );
+
+    min-height:520px;
+    padding:55px 0 35px;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:360px;
+    height:360px;
     border-radius:50%;
-    padding:7px;
-    background:white;
-    box-shadow:0 12px 30px rgba(90,60,80,.22);
-    flex-shrink:0;
+    right:-90px;
+    top:40px;
+    background:#fde9ef;
+    opacity:.7;
 }
 
-.photo-box img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.hero:after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
     border-radius:50%;
+    left:-170px;
+    bottom:-150px;
+    background:#e8f5fa;
+    opacity:.7;
 }
 
-.hero h1{
-    font-size:42px;
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr .92fr;
+    align-items:center;
+    gap:35px;
+    position:relative;
+    z-index:2;
+}
+
+.eyebrow{
+    font-family:Georgia,serif;
+    color:#ed7693;
+    font-style:italic;
+    font-size:18px;
     margin-bottom:10px;
 }
 
-.hero h2{
-    font-size:23px;
-    font-weight:600;
-    margin-bottom:12px;
+.hero h1{
+    font-family:Georgia,serif;
+    color:#173b65;
+    font-size:47px;
+    line-height:1.05;
+    margin-bottom:17px;
 }
 
-.hero p{
-    font-size:18px;
-    line-height:1.7;
-    max-width:650px;
+.hero h1 span{
+    display:block;
 }
 
-.school{
-    display:inline-block;
-    margin-top:15px;
-    padding:9px 17px;
-    background:rgba(255,255,255,.25);
-    border:1px solid rgba(255,255,255,.5);
-    border-radius:30px;
-    font-size:15px;
+.role{
+    font-family:Georgia,serif;
+    font-size:16px;
+    font-weight:700;
+    color:#27486a;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
 }
 
-section{
-    max-width:1100px;
-    margin:55px auto;
-    padding:0 20px;
+.role:before,
+.role:after{
+    content:"";
+    width:38px;
+    height:2px;
+    background:#d6ad64;
+}
+
+.quote{
+    font-family:Georgia,serif;
+    color:#4c6074;
+    font-size:14px;
+    line-height:1.65;
+    max-width:480px;
+    border-left:4px solid #f3b2c3;
+    padding-left:16px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:14px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:28px;
+    font-size:13px;
+    font-weight:800;
+}
+
+.btn-dark{
+    background:#173e69;
+    color:#fff;
+    box-shadow:0 8px 18px rgba(23,62,105,.18);
+}
+
+.btn-pink{
+    background:#ed6b8c;
+    color:#fff;
+    box-shadow:0 8px 18px rgba(237,107,140,.18);
+}
+
+.hero-school{
+    margin-top:17px;
+    font-size:12px;
+    font-weight:700;
+    color:#526a83;
+}
+
+/* =========================
+   TEACHER PHOTO
+========================= */
+
+.teacher-wrap{
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+.teacher-ring{
+    width:430px;
+    height:430px;
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffe6ed,
+            #f5c7d4
+        );
+
+    border:2px solid #d8b56e;
+
+    box-shadow:
+        0 0 0 9px rgba(255,255,255,.75),
+        0 15px 40px rgba(60,70,90,.14);
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.teacher-ring img{
+    width:92%;
+    height:92%;
+    object-fit:contain;
+    object-position:center bottom;
+}
+
+.flower{
+    position:absolute;
+    font-size:50px;
+    filter:drop-shadow(0 4px 5px rgba(0,0,0,.05));
+}
+
+.flower.f1{
+    left:4%;
+    top:5%;
+}
+
+.flower.f2{
+    left:0;
+    bottom:8%;
+}
+
+.flower.f3{
+    right:1%;
+    top:10%;
+}
+
+.flower.f4{
+    right:7%;
+    bottom:8%;
+}
+
+/* =========================
+   VALUES
+========================= */
+
+.values{
+    margin-top:-1px;
+    position:relative;
+    z-index:4;
+}
+
+.values-box{
+    background:#fff;
+    border-radius:28px;
+    box-shadow:0 10px 35px rgba(45,70,95,.12);
+    padding:22px 15px;
+
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.value{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    text-align:center;
+    padding:8px 10px;
+    border-right:1px solid #eee;
+}
+
+.value:last-child{
+    border-right:0;
+}
+
+.value-icon{
+    font-size:31px;
+}
+
+.value p{
+    font-size:11px;
+    line-height:1.35;
+    font-weight:700;
+    color:#405a75;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    padding:58px 0;
 }
 
 .section-title{
     text-align:center;
-    color:#bd5878;
-    font-size:31px;
+    font-family:Georgia,serif;
+    font-size:26px;
+    color:#173d67;
+    margin-bottom:9px;
+}
+
+.section-title:before,
+.section-title:after{
+    content:"";
+    display:inline-block;
+    width:55px;
+    height:1px;
+    background:#ef9db1;
+    vertical-align:middle;
+    margin:0 14px;
+}
+
+.section-heart{
+    text-align:center;
+    color:#ec6f91;
+    font-size:16px;
     margin-bottom:28px;
 }
 
-.section-title:after{
-    content:"";
-    display:block;
-    width:70px;
-    height:4px;
-    border-radius:10px;
-    background:linear-gradient(90deg,#e87991,#8ecbd1);
-    margin:10px auto;
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:
+        linear-gradient(
+            180deg,
+            #fff 0%,
+            #fff8fa 100%
+        );
 }
 
-.about-box{
-    background:rgba(255,255,255,.82);
-    border-radius:25px;
-    padding:30px;
-    box-shadow:0 8px 25px rgba(100,70,90,.1);
-    line-height:1.8;
-}
-
-.about-box strong{
-    color:#bd5878;
-}
-
-.info-grid{
+.about-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    margin-top:25px;
+    grid-template-columns:1.1fr .9fr;
+    gap:28px;
 }
 
-.info{
-    text-align:center;
-    background:linear-gradient(135deg,#fff,#fff4f7);
-    padding:20px 10px;
-    border-radius:20px;
-    border:1px solid #f2dce5;
+.panel{
+    background:#fff;
+    border:1px solid #f3e5e9;
+    border-radius:24px;
+    padding:28px;
+    box-shadow:0 8px 25px rgba(60,70,90,.06);
 }
 
-.info b{
-    display:block;
-    color:#bd5878;
-    font-size:18px;
-    margin-bottom:7px;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.card{
-    background:rgba(255,255,255,.9);
-    padding:25px 18px;
-    border-radius:25px;
-    box-shadow:0 8px 25px rgba(100,70,90,.1);
-    text-align:center;
-    transition:.3s;
-    border:1px solid rgba(220,170,190,.35);
-}
-
-.card:hover{
-    transform:translateY(-7px);
-    box-shadow:0 15px 30px rgba(100,70,90,.16);
-}
-
-.card-icon{
-    font-size:43px;
-    margin-bottom:10px;
-}
-
-.card h3{
-    color:#bd5878;
+.panel h3{
+    color:#173e68;
+    font-family:Georgia,serif;
     font-size:21px;
-    margin-bottom:10px;
+    margin-bottom:14px;
 }
 
-.card p{
+.panel p{
     font-size:14px;
-    line-height:1.6;
-    margin-bottom:15px;
+    line-height:1.75;
+    color:#52667a;
 }
 
-.card a{
-    display:inline-block;
-    text-decoration:none;
-    color:white;
-    background:linear-gradient(135deg,#e87991,#b982a5);
-    padding:9px 16px;
-    border-radius:25px;
-    font-size:14px;
+.facts{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
 }
+
+.fact{
+    background:#fff7f9;
+    border-radius:17px;
+    padding:16px;
+}
+
+.fact b{
+    display:block;
+    color:#e16d8b;
+    font-size:12px;
+    margin-bottom:5px;
+}
+
+.fact span{
+    font-size:13px;
+    font-weight:700;
+    color:#294866;
+}
+
+/* =========================
+   PRINCIPLES
+========================= */
 
 .principles{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:20px;
+    gap:17px;
 }
 
 .principle{
+    border-radius:22px;
     padding:25px 18px;
-    border-radius:25px;
     text-align:center;
-    background:rgba(255,255,255,.85);
-    box-shadow:0 8px 22px rgba(100,70,90,.09);
+    background:#fff;
+    box-shadow:0 8px 25px rgba(55,75,95,.07);
+    border:1px solid #edf0f3;
+}
+
+.principle:nth-child(1){
+    background:#fff5f8;
+}
+
+.principle:nth-child(2){
+    background:#f3fbf4;
+}
+
+.principle:nth-child(3){
+    background:#f7f3ff;
+}
+
+.principle:nth-child(4){
+    background:#fffaf0;
 }
 
 .principle .icon{
-    font-size:42px;
-}
-
-.principle h3{
-    color:#bd5878;
-    margin:10px 0;
-}
-
-.principle p{
-    font-size:14px;
-    line-height:1.6;
-}
-
-.quote{
-    max-width:900px;
-    margin:55px auto;
-    padding:35px;
-    text-align:center;
-    border-radius:30px;
-    background:linear-gradient(135deg,#fce1e9,#e4f4f8,#e6f7ee);
-    color:#79566b;
-    box-shadow:0 8px 25px rgba(100,70,90,.1);
-}
-
-.quote div{
-    font-size:38px;
-}
-
-.quote p{
-    font-size:24px;
-    font-style:italic;
-    line-height:1.6;
-}
-
-.certificate-box{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.certificate{
-    min-height:180px;
-    border-radius:22px;
-    background:rgba(255,255,255,.9);
-    box-shadow:0 8px 25px rgba(100,70,90,.1);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:20px;
-    border:2px dashed #e3b6c5;
-}
-
-.certificate span{
-    font-size:45px;
-    display:block;
+    font-size:36px;
     margin-bottom:10px;
 }
 
-.contact{
-    text-align:center;
-    background:linear-gradient(135deg,#f8e1e9,#e4f2f8);
-    padding:35px 20px;
-    border-radius:30px;
+.principle h3{
+    font-family:Georgia,serif;
+    font-size:17px;
+    color:#244866;
+    margin-bottom:7px;
 }
 
-.contact p{
-    margin:10px 0;
-    font-size:17px;
+.principle p{
+    font-size:12px;
+    line-height:1.55;
+    color:#607285;
 }
+
+/* =========================
+   MATERIALS
+========================= */
+
+.materials{
+    background:#fff;
+}
+
+.material-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+}
+
+.material{
+    border-radius:19px;
+    padding:23px 15px 18px;
+    text-align:center;
+    min-height:205px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.material:nth-child(1){
+    background:#edf5ff;
+}
+
+.material:nth-child(2){
+    background:#eff9f0;
+}
+
+.material:nth-child(3){
+    background:#f7effc;
+}
+
+.material:nth-child(4){
+    background:#fff8df;
+}
+
+.material:nth-child(5){
+    background:#fff0f5;
+}
+
+.material .micon{
+    font-size:36px;
+    margin-bottom:8px;
+}
+
+.material h3{
+    font-family:Georgia,serif;
+    color:#234563;
+    font-size:15px;
+    margin-bottom:9px;
+}
+
+.material p{
+    font-size:11px;
+    line-height:1.45;
+    color:#586c80;
+    flex:1;
+}
+
+.material a{
+    margin-top:12px;
+    background:#ed6b8c;
+    color:#fff;
+    border-radius:22px;
+    padding:8px 18px;
+    font-size:11px;
+    font-weight:800;
+}
+
+.material:nth-child(1) a{
+    background:#3e86cf;
+}
+
+.material:nth-child(2) a{
+    background:#4ea873;
+}
+
+.material:nth-child(3) a{
+    background:#a45dce;
+}
+
+.material:nth-child(4) a{
+    background:#e7aa38;
+}
+
+/* =========================
+   CERTIFICATES
+========================= */
+
+.cert-section{
+    background:#123c68;
+    color:#fff;
+    padding:42px 0;
+}
+
+.cert-head{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:22px;
+}
+
+.trophy{
+    font-size:54px;
+}
+
+.cert-head h2{
+    font-family:Georgia,serif;
+    font-size:24px;
+}
+
+.cert-head p{
+    font-size:12px;
+    color:#dce9f7;
+    margin-top:5px;
+}
+
+/* CERTIFICATE GRID */
+
+.cert-strip{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+}
+
+.cert-card{
+    background:#fff;
+    border-radius:8px;
+    padding:7px 7px 11px;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(0,0,0,.16);
+    transition:.25s;
+}
+
+.cert-card:hover{
+    transform:translateY(-5px);
+}
+
+.cert-card img{
+    display:block;
+    width:100%;
+    height:125px;
+    object-fit:cover;
+    border-radius:4px;
+}
+
+.cert-card p{
+    text-align:center;
+    color:#23435f;
+    font-size:10px;
+    font-weight:700;
+    margin-top:8px;
+}
+
+.cert-more{
+    text-align:center;
+    margin-top:23px;
+}
+
+.cert-more a{
+    display:inline-block;
+    border:1px solid #f1c56e;
+    color:#f8d58a;
+    padding:9px 22px;
+    border-radius:24px;
+    font-size:12px;
+    font-weight:800;
+}
+
+/* =========================
+   EVENTS
+========================= */
+
+.gallery-section{
+    background:#fff;
+}
+
+.gallery-note{
+    text-align:center;
+    color:#6d7d8d;
+    font-size:13px;
+    margin:-15px auto 22px;
+}
+
+.photo-box{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+}
+
+.photo-link{
+    background:#f4f7fa;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid #e7edf2;
+    min-height:120px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:15px;
+
+    color:#52708a;
+    font-size:12px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.photo-link:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(50,70,90,.1);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:
+        linear-gradient(
+            180deg,
+            #fff7f8,
+            #fffdf9
+        );
+
+    position:relative;
+    overflow:hidden;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:28px;
+    align-items:center;
+}
+
+.contact-card{
+    background:#fff;
+    border-radius:24px;
+    padding:27px;
+    box-shadow:0 8px 26px rgba(70,70,90,.07);
+}
+
+.contact-item{
+    display:flex;
+    gap:13px;
+    align-items:flex-start;
+    padding:10px 0;
+    border-bottom:1px solid #f2e8eb;
+    font-size:13px;
+    color:#4d6378;
+}
+
+.contact-item:last-child{
+    border-bottom:0;
+}
+
+.contact-item b{
+    color:#173e68;
+}
+
+.contact-quote{
+    font-family:Georgia,serif;
+    font-size:20px;
+    line-height:1.6;
+    color:#d96b89;
+    font-style:italic;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    margin-top:60px;
-    padding:25px;
+    background:#173e68;
+    color:#dce9f7;
     text-align:center;
-    color:white;
-    background:linear-gradient(135deg,#d96d87,#9c91b8,#7fb6c1);
+    padding:20px;
+    font-size:12px;
 }
 
-footer p{
-    margin:5px;
+/* =========================
+   CERTIFICATE LARGE VIEW
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(7,20,35,.92);
+    z-index:100;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    padding:22px;
 }
 
-@media(max-width:850px){
-    .hero{
-        flex-direction:column;
+.modal.open{
+    display:flex;
+}
+
+.modal img{
+    max-width:94vw;
+    max-height:88vh;
+    object-fit:contain;
+
+    border-radius:6px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.5);
+}
+
+.modal-close{
+    position:absolute;
+    right:22px;
+    top:14px;
+
+    color:#fff;
+    font-size:42px;
+    line-height:1;
+
+    cursor:pointer;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
         text-align:center;
-        gap:25px;
     }
 
-    .hero h1{
-        font-size:32px;
+    .hero-text{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
     }
 
-    .hero h2{
-        font-size:20px;
+    .teacher-ring{
+        width:330px;
+        height:330px;
     }
 
-    .info-grid{
+    .values-box{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .cards,
+    .value:nth-child(2),
+    .value:nth-child(4){
+        border-right:0;
+    }
+
     .principles{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .certificate-box{
-        grid-template-columns:1fr 1fr;
+    .material-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    nav{
-        flex-direction:column;
-    }
-}
-
-@media(max-width:550px){
-    header{
-        padding:20px 15px;
-    }
-
-    nav ul{
-        gap:10px;
-    }
-
-    nav a{
-        font-size:13px;
+    .cert-strip{
+        grid-template-columns:repeat(3,1fr);
     }
 
     .photo-box{
-        width:190px;
-        height:190px;
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================
+   PHONE
+========================= */
+
+@media(max-width:560px){
+
+    .logo{
+        font-size:17px;
+    }
+
+    .nav-btn{
+        display:none;
+    }
+
+    .hero{
+        padding-top:35px;
     }
 
     .hero h1{
-        font-size:28px;
+        font-size:34px;
     }
 
-    .hero p{
-        font-size:16px;
+    .eyebrow{
+        font-size:15px;
     }
 
-    section{
-        margin:40px auto;
+    .teacher-ring{
+        width:285px;
+        height:285px;
     }
 
-    .section-title{
-        font-size:27px;
+    .flower{
+        font-size:34px;
     }
 
-    .info-grid,
-    .cards,
+    .values-box{
+        grid-template-columns:1fr;
+        padding:14px;
+    }
+
+    .value{
+        border-right:0!important;
+        border-bottom:1px solid #eee!important;
+    }
+
+    .value:last-child{
+        border-bottom:0!important;
+    }
+
     .principles,
-    .certificate-box{
+    .material-grid{
         grid-template-columns:1fr;
     }
 
-    .quote p{
-        font-size:19px;
+    .cert-strip{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cert-card img{
+        height:105px;
+    }
+
+    .section{
+        padding:45px 0;
+    }
+
+    .section-title{
+        font-size:21px;
+    }
+
+    .section-title:before,
+    .section-title:after{
+        width:25px;
+        margin:0 7px;
+    }
+
+    .facts{
+        grid-template-columns:1fr;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <div class="logo">🌷 Талайкүл мугалим</div>
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-        <ul>
-            <li><a href="#about">Мен жөнүндө</a></li>
-            <li><a href="#principles">Принциптерим</a></li>
-            <li><a href="#materials">Материалдар</a></li>
-            <li><a href="#certificates">Сертификаттар</a></li>
-            <li><a href="#contact">Байланыш</a></li>
-        </ul>
-    </nav>
+<div class="topbar">
 
-    <div class="hero">
+<nav class="nav">
 
-        <div class="photo-box">
-            <img src="teacher-photo.png" alt="Идирисова Талайкүл">
-        </div>
+<a class="logo" href="#home">
+    <span class="logo-mark">🌷📖</span>
+    Талайкүл мугалим
+    <span style="color:#ed6b8c">♥</span>
+</a>
 
-        <div>
-            <h1>Идирисова Талайкүл</h1>
+<ul class="nav-links">
 
-            <h2>Башталгыч класстын мугалими 🌷</h2>
+<li>
+<a class="active" href="#home">
+Башкы бет
+</a>
+</li>
 
-            <p>
-                Балдарга билим берүү менен бирге алардын
-                өз алдынча ой жүгүртүүсүн, чыгармачылыгын,
-                жоопкерчилигин жана өзүнө болгон ишенимин өнүктүрүү —
-                менин негизги максатым.
-            </p>
+<li>
+<a href="#about">
+Мен жөнүндө
+</a>
+</li>
 
-            <div class="school">
-                🏫 Ой-Терскен инновациялык жалпы билим берүү мектеби
-            </div>
-        </div>
+<li>
+<a href="#materials">
+Материалдар
+</a>
+</li>
 
-    </div>
-</header>
+<li>
+<a href="#achievements">
+Жетишкендиктер
+</a>
+</li>
 
+<li>
+<a href="#events">
+Иш-чаралар
+</a>
+</li>
 
-<section id="about">
+<li>
+<a href="#contact">
+Байланыш
+</a>
+</li>
 
-    <h2 class="section-title">Мен жөнүндө 🌸</h2>
+</ul>
 
-    <div class="about-box">
+<a class="nav-btn" href="#contact">
+✉ Байланыш
+</a>
 
-        <p>
-            Мен — <strong>Идирисова Талайкүл Орозобековна</strong>,
-            башталгыч класстын мугалимимин.
-        </p>
-
-        <p>
-            Окуучуларга сапаттуу билим берүү менен бирге,
-            алардын чыгармачылык жөндөмүн, өз алдынча ой жүгүртүүсүн
-            жана жоопкерчилигин өнүктүрүүгө аракет кылам.
-        </p>
-
-        <div class="info-grid">
-
-            <div class="info">
-                <b>🎓 Билимим</b>
-                Педагогика магистри
-            </div>
-
-            <div class="info">
-                <b>👩‍🏫 Кесибим</b>
-                Башталгыч класстын мугалими
-            </div>
-
-            <div class="info">
-                <b>⏳ Тажрыйбам</b>
-                15 жыл
-            </div>
-
-            <div class="info">
-                <b>🏫 Мектеп</b>
-                Ой-Терскен инновациялык жалпы билим берүү мектеби
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section id="principles">
-
-    <h2 class="section-title">Педагогикалык принциптерим 🌷</h2>
-
-    <div class="principles">
-
-        <div class="principle">
-            <div class="icon">💗</div>
-            <h3>Мээрим</h3>
-            <p>
-                Ар бир окуучуга урмат жана мээрим менен мамиле кылуу.
-            </p>
-        </div>
-
-        <div class="principle">
-            <div class="icon">🎨</div>
-            <h3>Чыгармачылык</h3>
-            <p>
-                Баланын чыгармачылык мүмкүнчүлүгүн ачууга шарт түзүү.
-            </p>
-        </div>
-
-        <div class="principle">
-            <div class="icon">🌱</div>
-            <h3>Өнүгүү</h3>
-            <p>
-                Ар бир баланын жеке жөндөмүнө жараша өнүгүүсүнө жардам берүү.
-            </p>
-        </div>
-
-        <div class="principle">
-            <div class="icon">⭐</div>
-            <h3>Ишеним</h3>
-            <p>
-                Окуучунун өзүнө болгон ишенимин бекемдөө.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section id="materials">
-
-    <h2 class="section-title">Окуу материалдары 📚</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="card-icon">➗</div>
-            <h3>Математика</h3>
-            <p>
-                Сабактын иштелмелери, дидактикалык материалдар,
-                КТП, предметтик стандарт жана ачык сабактар.
-            </p>
-            <a href="#">Көрүү</a>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">🔤</div>
-            <h3>Кыргыз тили</h3>
-            <p>
-                1–4-класстар үчүн сабактын иштелмелери,
-                КТП, стандарт жана дидактикалык материалдар.
-            </p>
-            <a href="#">Көрүү</a>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">📖</div>
-            <h3>Адабий окуу</h3>
-            <p>
-                Окуу сабактары үчүн иштелмелер,
-                тапшырмалар жана кызыктуу материалдар.
-            </p>
-            <a href="#">Көрүү</a>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">🌍</div>
-            <h3>Дүйнө таануу</h3>
-            <p>
-                Сабактын иштелмелери, презентациялар,
-                дидактикалык жана көрсөтмөлүү материалдар.
-            </p>
-            <a href="#">Көрүү</a>
-        </div>
-
-    </div>
-
-</section>
-
-
-<div class="quote">
-
-    <div>🌷</div>
-
-    <p>
-        «Мугалим деген — жөн гана кесип эмес,
-        ал — жүрөктүн иши.»
-    </p>
+</nav>
 
 </div>
 
 
-<section id="certificates">
+<!-- =========================
+     HERO
+========================= -->
 
-    <h2 class="section-title">Сертификаттар 🏆</h2>
+<header id="home" class="hero">
 
-    <div class="certificate-box">
+<div class="container hero-grid">
 
-        <div class="certificate">
-            <div>
-                <span>🏆</span>
-                <b>Сертификаттар</b>
-                <p>Педагогикалык жетишкендиктер</p>
-            </div>
-        </div>
+<div class="hero-text">
 
-        <div class="certificate">
-            <div>
-                <span>📜</span>
-                <b>Квалификация</b>
-                <p>Кесиптик өнүгүү документтери</p>
-            </div>
-        </div>
+<div class="eyebrow">
+Мугалим — жүрөктүн жараткан кесиби! ♥
+</div>
 
-        <div class="certificate">
-            <div>
-                <span>🌟</span>
-                <b>Жетишкендиктер</b>
-                <p>Ийгиликтер жана сыйлыктар</p>
-            </div>
-        </div>
+<h1>
 
-    </div>
+<span>ИДИРИСОВА</span>
+
+<span>ТАЛАЙКҮЛ</span>
+
+<span>ОРОЗОБЕКОВНА</span>
+
+</h1>
+
+<div class="role">
+Башталгыч класстын мугалими
+</div>
+
+<div class="quote">
+
+Ар бир бала — өзгөчө инсан.<br>
+
+Анын жөндөмүн ачуу —
+мугалимдин эң чоң милдети.
+
+</div>
+
+<div class="hero-actions">
+
+<a class="btn btn-dark" href="#about">
+♙ Мен жөнүндө
+</a>
+
+<a class="btn btn-pink" href="#materials">
+▣ Материалдарды көрүү
+</a>
+
+</div>
+
+<div class="hero-school">
+
+Ой-Терскен инновациялык жалпы билим берүү мектеби
+
+</div>
+
+</div>
+
+
+<div class="teacher-wrap">
+
+<span class="flower f1">🌸</span>
+<span class="flower f2">🌷</span>
+<span class="flower f3">🌸</span>
+<span class="flower f4">🌷</span>
+
+<div class="teacher-ring">
+
+<img
+src="teacher-photo.png"
+alt="Идирисова Талайкүл Орозобековна"
+>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     VALUES
+========================= -->
+
+<section class="values">
+
+<div class="container values-box">
+
+<div class="value">
+
+<div class="value-icon">♡</div>
+
+<p>
+Ар бир балага<br>
+жеке мамиле
+</p>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">☆</div>
+
+<p>
+Сапаттуу билим<br>
+берүүгө умтулуу
+</p>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">💡</div>
+
+<p>
+Чыгармачылыкка жана<br>
+изденүүгө шыктандыруу
+</p>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">♡</div>
+
+<p>
+Боорукердик жана<br>
+сый — урмат принциби
+</p>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">🎓</div>
+
+<p>
+Келечекке ишеним менен<br>
+кадам таштайбыз
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
-<section id="contact">
+<!-- =========================
+     ABOUT
+========================= -->
 
-    <h2 class="section-title">Байланыш 📩</h2>
+<section id="about" class="section about">
 
-    <div class="contact">
+<div class="container">
 
-        <p>👩‍🏫 <strong>Идирисова Талайкүл Орозобековна</strong></p>
+<h2 class="section-title">
+МЕН ЖӨНҮНДӨ
+</h2>
 
-        <p>🏫 Ой-Терскен инновациялык жалпы билим берүү мектеби</p>
+<div class="section-heart">
+♥
+</div>
 
-        <p>📚 Башталгыч класстын мугалими</p>
 
-    </div>
+<div class="about-grid">
+
+<div class="panel">
+
+<h3>
+Менин педагогикалык жолум
+</h3>
+
+<p>
+
+Мен — башталгыч класстын мугалими,
+педагогика магистрими.
+
+Окуучуларга билим берүү менен бирге
+алардын өз алдынча ой жүгүртүүсүн,
+чыгармачылыгын, жоопкерчилигин жана
+өзүнө болгон ишенимин өнүктүрүүгө аракет кылам.
+
+</p>
+
+<p style="margin-top:12px">
+
+Ар бир сабакта баланын кызыгуусун ойготуп,
+түшүнүктүү жана заманбап ыкмаларды
+колдонууга өзгөчө көңүл бурам.
+
+</p>
+
+</div>
+
+
+<div class="facts">
+
+<div class="fact">
+
+<b>Билимим</b>
+
+<span>
+Педагогика магистри
+</span>
+
+</div>
+
+
+<div class="fact">
+
+<b>Кесибим</b>
+
+<span>
+Башталгыч класстын мугалими
+</span>
+
+</div>
+
+
+<div class="fact">
+
+<b>Тажрыйба</b>
+
+<span>
+15 жыл
+</span>
+
+</div>
+
+
+<div class="fact">
+
+<b>Мектеп</b>
+
+<span>
+Ой-Терскен инновациялык жалпы билим берүү мектеби
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
+
+<!-- =========================
+     PRINCIPLES
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+ПЕДАГОГИКАЛЫК ПРИНЦИПТЕРИМ
+</h2>
+
+<div class="section-heart">
+♥
+</div>
+
+
+<div class="principles">
+
+
+<div class="principle">
+
+<div class="icon">
+♡
+</div>
+
+<h3>
+Мээрим
+</h3>
+
+<p>
+Ар бир окуучуну сыйлап,
+анын өзгөчөлүгүн кабыл алуу.
+</p>
+
+</div>
+
+
+<div class="principle">
+
+<div class="icon">
+✿
+</div>
+
+<h3>
+Чыгармачылык
+</h3>
+
+<p>
+Кызыктуу тапшырмалар жана
+чыгармачылык менен окутуу.
+</p>
+
+</div>
+
+
+<div class="principle">
+
+<div class="icon">
+↗
+</div>
+
+<h3>
+Өнүгүү
+</h3>
+
+<p>
+Өз алдынча ой жүгүртүүгө
+жана изденүүгө мүмкүнчүлүк берүү.
+</p>
+
+</div>
+
+
+<div class="principle">
+
+<div class="icon">
+♡
+</div>
+
+<h3>
+Ишеним
+</h3>
+
+<p>
+Ар бир бала өз күчүнө
+ишенгендей шарт түзүү.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MATERIALS
+========================= -->
+
+<section id="materials" class="section materials">
+
+<div class="container">
+
+<h2 class="section-title">
+ОКУУ-МЕТОДИКАЛЫК МАТЕРИАЛДАР
+</h2>
+
+<div class="section-heart">
+♥
+</div>
+
+
+<div class="material-grid">
+
+
+<div class="material">
+
+<div class="micon">
+123
+</div>
+
+<h3>
+Математика
+</h3>
+
+<p>
+Сабактын иштелмелери,
+дидактикалык материалдар,
+КТП, предметтик стандарт
+жана ачык сабактар.
+</p>
+
+<a href="./Математика/">
+Көрүү →
+</a>
+
+</div>
+
+
+<div class="material">
+
+<div class="micon">
+🖋
+</div>
+
+<h3>
+Кыргыз тили
+</h3>
+
+<p>
+Сабактын иштелмелери,
+дидактикалык материалдар,
+КТП, предметтик стандарт
+жана ачык сабактар.
+</p>
+
+<a href="./Кыргыз%20тили/">
+Көрүү →
+</a>
+
+</div>
+
+
+<div class="material">
+
+<div class="micon">
+📖
+</div>
+
+<h3>
+Адабий окуу
+</h3>
+
+<p>
+Сабактын иштелмелери,
+дидактикалык материалдар,
+КТП, предметтик стандарт
+жана ачык сабактар.
+</p>
+
+<a href="./Адабий%20окуу/">
+Көрүү →
+</a>
+
+</div>
+
+
+<div class="material">
+
+<div class="micon">
+🌍
+</div>
+
+<h3>
+Дүйнө таануу
+</h3>
+
+<p>
+Сабактын иштелмелери,
+дидактикалык материалдар,
+КТП, предметтик стандарт
+жана ачык сабактар.
+</p>
+
+<a href="./ЖББ%20документтери/">
+Көрүү →
+</a>
+
+</div>
+
+
+<div class="material">
+
+<div class="micon">
+🎨
+</div>
+
+<h3>
+Кошумча материалдар
+</h3>
+
+<p>
+Презентациялар,
+видеолор, сүрөттөр
+жана ачык сабактар.
+</p>
+
+<a href="#events">
+Көрүү →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CERTIFICATES
+========================= -->
+
+<section id="achievements" class="cert-section">
+
+<div class="container">
+
+<div class="cert-head">
+
+<div class="trophy">
+🏆
+</div>
+
+<div>
+
+<h2>
+ЖЕТИШКЕНДИКТЕРИМ
+</h2>
+
+<p>
+Эмгек жолумдагы сыйлыктарым жана сертификаттарым
+</p>
+
+</div>
+
+</div>
+
+
+<div class="cert-strip">
+
+
+<!-- 1 -->
+
+<div class="cert-card" onclick="openCert(this)">
+
+<img
+src="certificate_111_c5fe3dbbf4f746f5bc5e9dc04359883b_168.jpg"
+alt="Сертификат 1"
+>
+
+<p>
+Сертификат
+</p>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="cert-card" onclick="openCert(this)">
+
+<img
+src="IMG-20240702-WA0245.jpg"
+alt="Сертификат 2"
+>
+
+<p>
+Сертификат
+</p>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="cert-card" onclick="openCert(this)">
+
+<img
+src="ACE%20Scanner_2024_06_18-05.jpg"
+alt="Сертификат 3"
+>
+
+<p>
+Сертификат
+</p>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="cert-card" onclick="openCert(this)">
+
+<img
+src="ACE%20Scanner_2024_06_18-04.jpg"
+alt="Сертификат 4"
+>
+
+<p>
+Сертификат
+</p>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="cert-card" onclick="openCert(this)">
+
+<img
+src="ACE%20Scanner_2024_06_18-03.jpg"
+alt="Сертификат 5"
+>
+
+<p>
+Сертификат
+</p>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="cert-card" onclick="openCert(this)">
+
+<img
+src="ACE%20Scanner_2024_06_18-02.jpg"
+alt="Сертификат 6"
+>
+
+<p>
+Сертификат
+</p>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="cert-card" onclick="openCert(this)">
+
+<img
+src="ACE%20Scanner_2024_06_18(2)-02.jpg"
+alt="Сертификат 7"
+>
+
+<p>
+Сертификат
+</p>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="cert-card" onclick="openCert(this)">
+
+<img
+src="ACE%20Scanner_2024_06_18(2)-01.jpg"
+alt="Сертификат 8"
+>
+
+<p>
+Сертификат
+</p>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="cert-card" onclick="openCert(this)">
+
+<img
+src="20260516_180459.jpg"
+alt="Сертификат 9"
+>
+
+<p>
+Сертификат
+</p>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="cert-card" onclick="openCert(this)">
+
+<img
+src="ACE%20Scanner_2024_06_18(1)-02.jpg"
+alt="Сертификат 10"
+>
+
+<p>
+Сертификат
+</p>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="cert-card" onclick="openCert(this)">
+
+<img
+src="ACE%20Scanner_2024_06_18(1)-01.jpg"
+alt="Сертификат 11"
+>
+
+<p>
+Сертификат
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="cert-more">
+
+<a href="./Сүрөттөр/">
+Баарын көрүү →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     EVENTS
+========================= -->
+
+<section id="events" class="section gallery-section">
+
+<div class="container">
+
+<h2 class="section-title">
+ИШ-ЧАРАЛАР ЖАНА ОКУУЧУЛАРЫМ
+</h2>
+
+<div class="section-heart">
+♥
+</div>
+
+<p class="gallery-note">
+
+Сабактарым, иш-чараларым жана окуучуларым
+менен болгон эсте каларлык көз ирмемдер.
+
+</p>
+
+
+<div class="photo-box">
+
+
+<a class="photo-link" href="./Сүрөттөр/">
+
+📷
+<br><br>
+Сүрөттөр галереясы
+
+</a>
+
+
+<a class="photo-link" href="./Видеолор/">
+
+▶
+<br><br>
+Видеолор
+
+</a>
+
+
+<a class="photo-link" href="./Презентациялар/">
+
+▣
+<br><br>
+Презентациялар
+
+</a>
+
+
+<a class="photo-link" href="./Ачык%20сабактар/">
+
+★
+<br><br>
+Ачык сабактар
+
+</a>
+
+
+<a class="photo-link" href="./Ачык%20сабактардын%20иштелмелери/">
+
+✎
+<br><br>
+Ачык сабактардын иштелмелери
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="section contact">
+
+<div class="container contact-grid">
+
+
+<div class="contact-card">
+
+<h2 style="
+font-family:Georgia,serif;
+color:#173e68;
+margin-bottom:14px;
+">
+
+Идирисова Талайкүл Орозобековна
+
+</h2>
+
+
+<p style="
+font-size:13px;
+color:#64768a;
+margin-bottom:10px;
+">
+
+Башталгыч класстын мугалими
+
+</p>
+
+
+<div class="contact-item">
+
+<span>📍</span>
+
+<span>
+
+<b>Кыргызстан</b>
+<br>
+
+Бишкек ш.
+
+</span>
+
+</div>
+
+
+<div class="contact-item">
+
+<span>✉</span>
+
+<span>
+
+<b>Email</b>
+<br>
+
+talaykul.idirisova@mail.ru
+
+</span>
+
+</div>
+
+
+<div class="contact-item">
+
+<span>🏫</span>
+
+<span>
+
+<b>Мектеп</b>
+<br>
+
+Ой-Терскен инновациялык жалпы билим берүү мектеби
+
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="contact-quote">
+
+“Мугалим деген —
+жөн гана кесип эмес,
+ал — жүрөктүн иши.” ♥
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-    <p>🌷 Идирисова Талайкүл — Мугалим</p>
-
-    <p>Билим • Мээрим • Чыгармачылык • Өнүгүү</p>
-
-    <p>© 2026</p>
+© 2026 Идирисова Талайкүл Орозобековна
+· Талайкүл мугалим 🌷
 
 </footer>
+
+
+<!-- =========================
+     CERTIFICATE MODAL
+========================= -->
+
+<div
+class="modal"
+id="certModal"
+onclick="closeCert(event)"
+>
+
+<span
+class="modal-close"
+onclick="closeCert(event)"
+>
+×
+</span>
+
+<img
+id="modalImage"
+src=""
+alt="Сертификат"
+>
+
+</div>
+
+
+<script>
+
+/* =========================
+   CERTIFICATE BIG VIEW
+========================= */
+
+function openCert(card){
+
+    const img = card.querySelector("img");
+
+    document.getElementById("modalImage").src = img.src;
+
+    document
+        .getElementById("certModal")
+        .classList.add("open");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* =========================
+   CLOSE
+========================= */
+
+function closeCert(e){
+
+    if(
+        e.target.id === "certModal" ||
+        e.target.classList.contains("modal-close")
+    ){
+
+        document
+            .getElementById("certModal")
+            .classList.remove("open");
+
+        document.body.style.overflow = "";
+    }
+}
+
+
+/* =========================
+   ESC KEY
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            document
+                .getElementById("certModal")
+                .classList.remove("open");
+
+            document.body.style.overflow = "";
+
+        }
+
+    }
+);
+
+</script>
 
 </body>
 </html>
