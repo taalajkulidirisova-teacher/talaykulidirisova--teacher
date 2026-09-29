@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мен жана дүйнө</title>
 
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#fff4f7,#eefaff,#f4fff4);
+    color:#444;
+}
+
+header{
+    background:linear-gradient(135deg,#e87991,#8fc9d9);
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+    border-radius:0 0 35px 35px;
+}
+
+header h1{
+    margin:0 0 10px;
+    font-size:32px;
+}
+
+header p{
+    margin:0;
+    font-size:17px;
+}
+
+.container{
+    max-width:1000px;
+    margin:35px auto;
+    padding:0 20px;
+}
+
+.back{
+    display:inline-block;
+    text-decoration:none;
+    color:#d85d7a;
+    background:white;
+    padding:10px 18px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.classes{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.class-card{
+    background:white;
+    border-radius:25px;
+    padding:30px 20px;
+    text-align:center;
+    box-shadow:0 8px 22px rgba(0,0,0,.09);
+    transition:.25s;
+}
+
+.class-card:hover{
+    transform:translateY(-5px);
+}
+
+.icon{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.class-card h2{
+    margin:10px 0;
+    color:#d85d7a;
+}
+
+.class-card p{
+    color:#777;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    background:linear-gradient(135deg,#e87991,#9aceda);
+    color:white;
+    padding:11px 22px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:30px 15px;
+    color:#888;
+}
+
+@media(max-width:650px){
+    .classes{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌍 Мен жана дүйнө</h1>
+    <p>Башталгыч класстар үчүн окуу материалдары</p>
+</header>
+
+<div class="container">
+
+    <a class="back" href="../index.html">← Башкы бетке кайтуу</a>
+
+    <div class="classes">
+
+        <div class="class-card">
+            <div class="icon">🌱</div>
+            <h2>1-класс</h2>
+            <p>1-класс үчүн материалдар</p>
+            <a class="btn" href="#">Кирүү</a>
+        </div>
+
+        <div class="class-card">
+            <div class="icon">🌿</div>
+            <h2>2-класс</h2>
+            <p>2-класс үчүн материалдар</p>
+            <a class="btn" href="#">Кирүү</a>
+        </div>
+
+        <div class="class-card">
+            <div class="icon">🌳</div>
+            <h2>3-класс</h2>
+            <p>3-класс үчүн материалдар</p>
+            <a class="btn" href="#">Кирүү</a>
+        </div>
+
+        <div class="class-card">
+            <div class="icon">🌻</div>
+            <h2>4-класс</h2>
+            <p>4-класс үчүн материалдар</p>
+            <a class="btn" href="#">Кирүү</a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    © 2026 Талайкүл Идирисова
+</footer>
+
+</body>
+</html>
