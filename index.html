@@ -48,5 +48,29 @@ const menu=document.getElementById('menuToggle'),nav=document.getElementById('na
 const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 let certOffset=0;const certs=[...document.querySelectorAll('.certificate')];function rotateCerts(dir){certOffset=(certOffset+dir+certs.length)%certs.length;const parent=document.querySelector('.certificates');certs.forEach((el,i)=>{const idx=(i+certOffset)%certs.length;parent.appendChild(certs[idx])})}document.getElementById('prevCert').addEventListener('click',()=>rotateCerts(-1));document.getElementById('nextCert').addEventListener('click',()=>rotateCerts(1));
 const modal=document.getElementById('contactModal');document.querySelectorAll('[data-topic]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('messageTopic').value='Материал: '+a.dataset.topic}));document.querySelectorAll('a[href="#contact"]').forEach(a=>a.addEventListener('click',e=>{if(a.dataset.topic){e.preventDefault();modal.classList.add('open')}}));document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('open'));modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});document.getElementById('sendMail').addEventListener('click',()=>{const subject=encodeURIComponent(document.getElementById('messageTopic').value);const body=encodeURIComponent(document.getElementById('messageBody').value);window.location.href='mailto:talaykul.idirisova@mail.ru?subject='+subject+'&body='+body});
+
+/* Сүрөт менен алкакты так дал келтирүү */
+.hero-photo-wrap{
+  align-items:center !important;
+}
+
+.portrait-ring{
+  top:50% !important;
+  bottom:auto !important;
+  left:50% !important;
+  transform:translate(-50%,-50%) !important;
+  width:min(72%,300px) !important;
+  aspect-ratio:1/1 !important;
+  border-radius:50% !important;
+}.hero-photo{
+  width:min(72%,300px) !important;
+  height:auto !important;
+  max-height:none !important;
+  aspect-ratio:1/1 !important;
+  object-fit:cover !important;
+  object-position:center top !important;
+  border-radius:50% !important;
+  mask-image:none !important;
+}
 </script>
 </body></html>
