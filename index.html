@@ -125,7 +125,51 @@ floral{position:absolute;z-index:2;font-size:48px;filter:drop-shadow(0 5px 5px #
     mix-blend-mode: normal !important;
     z-index: 1 !important;
   }
-</style>
+/* Портрет менен алтын рамканы бириктирүү */
+.hero-photo-wrap {
+  align-items: center !important;
+}
+
+.portrait-ring {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: min(74%, 310px) !important;
+  aspect-ratio: 1 / 1 !important;
+  border: 4px double #e6b951 !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  z-index: 0 !important;
+}
+
+.hero-photo {
+  position: relative !important;
+  z-index: 1 !important;
+  width: min(68%, 280px) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border-radius: 50% !important;
+  max-height: none !important;
+  mask-image: none !important;
+  mix-blend-mode: normal !important;
+}
+
+@media (max-width: 560px) {
+  .hero-photo-wrap {
+    min-height: 300px !important;
+  }
+
+  .portrait-ring {
+    width: min(74%, 300px) !important;
+  }
+
+  .hero-photo {
+    width: min(68%, 280px) !important;
+  }
+}</style>
 </head>
 <body>
 <header class="topbar"><a class="brand" href="#home" aria-label="Башкы бет"><span class="brand-icon">📖</span><span>Талайкүл мугалим <span>♥</span></span></a><button class="menu-toggle" id="menuToggle" aria-label="Менюну ачуу">☰</button><nav id="nav"><a class="active" href="#home">Башкы бет</a><a href="#about">Мен жөнүндө</a><a href="#materials">Материалдар</a><a href="#achievements">Жетишкендиктер</a><a href="#gallery">Иш-чаралар</a><a href="#contact">Байланыш</a></nav><a class="pill top-contact" href="#contact">✉ Байланышуу</a></header>
