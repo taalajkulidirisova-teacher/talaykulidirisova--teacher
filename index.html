@@ -157,19 +157,39 @@ floral{position:absolute;z-index:2;font-size:48px;filter:drop-shadow(0 5px 5px #
   mask-image: none !important;
   mix-blend-mode: normal !important;
 }
-
 @media (max-width: 560px) {
   .hero-photo-wrap {
     min-height: 300px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: visible !important;
   }
 
   .portrait-ring {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
     width: min(74%, 300px) !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 50% !important;
+    border: 4px double #e6b951 !important;
+    background: transparent !important;
+    z-index: 3 !important;
   }
 
   .hero-photo {
     width: min(68%, 280px) !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    border-radius: 50% !important;
+    z-index: 1 !important;
   }
+}
+
 }</style>
 </head>
 <body>
