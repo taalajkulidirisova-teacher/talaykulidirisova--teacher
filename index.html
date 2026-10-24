@@ -31,7 +31,40 @@ mask-image:none;
 @media(max-width:900px){.topbar{height:64px}.brand{font-size:19px}.menu-toggle{display:block}nav{display:none;position:absolute;left:12px;right:12px;top:64px;background:white;border-radius:18px;padding:14px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:3px}nav.open{display:flex}nav a{padding:11px}.top-contact{display:none}.hero{padding:24px 26px 0;grid-template-columns:1fr 1fr;min-height:340px}.hero h1{font-size:clamp(29px,4.6vw,42px)}.hero-photo-wrap{min-height:300px}.values{margin:0 14px 22px;grid-template-columns:repeat(5,1fr)}.value{font-size:10px;padding:0 5px}.value .emoji{font-size:26px}.materials{grid-template-columns:repeat(3,1fr)}.achievements{grid-template-columns:1fr;gap:14px}.certificates{grid-template-columns:repeat(5,1fr)}.ach-title{justify-content:center}.gallery-grid{grid-template-columns:repeat(3,1fr)}.footer{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.brand{font-size:17px}.brand-icon{font-size:28px}.hero{grid-template-columns:1fr;padding:28px 22px 0;text-align:center}.hero-copy{padding-bottom:4px}.eyebrow{font-size:18px}.hero h1{font-size:37px}.role{justify-content:center;font-size:14px}.role:before,.role:after{width:18px}.school{font-size:14px}.quote{margin:10px auto 16px;text-align:left}.actions{justify-content:center}.hero-photo-wrap{min-height:265px;margin-top:4px}.portrait-ring{width:70%;}.hero-photo{width:68%;max-height:280px}.heart-doodle{font-size:34px}.floral{font-size:35px}.values{grid-template-columns:repeat(2,1fr);border-radius:20px;gap:0}.value{padding:10px 6px;border-bottom:1px solid var(--line)}.value:nth-child(2n){border-right:0}.value:last-child{grid-column:1/-1;border-bottom:0}.section-title{font-size:20px;gap:6px}.section-title:before,.section-title:after{font-size:9px}.materials{grid-template-columns:repeat(2,1fr)}.material{min-height:205px;padding:14px 9px}.material h3{font-size:14px}.achievements{padding:20px 15px}.certificates{grid-template-columns:repeat(2,1fr)}.certificate:last-child{display:none}.gallery-grid{grid-template-columns:repeat(2,1fr);gap:8px}.gallery-card{min-height:110px}.scene{font-size:47px}.footer{grid-template-columns:1fr;padding:26px 26px 35px;text-align:center}.contact-list div{justify-content:center}.socials{justify-content:center}.footer:before,.footer:after{font-size:44px}.pill{padding:11px 16px;font-size:13px}}
 .reveal{opacity:1!important;transform:none!important}
-.reveal.visible{opacity:1!important;transform:none!important}</style>
+.reveal.visible{opacity:1!important;transform:none!important}
+.hero-photo-wrap {
+  position: relative;
+}
+
+.portrait-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(72%, 300px);
+  aspect-ratio: 1 / 1;
+  border: 4px double #e6b951;
+  border-radius: 50%;
+  background: #ffe7ec;
+  box-shadow: 0 0 0 8px #ffffff70;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-photo {
+  position: relative;
+  z-index: 1;
+  width: min(68%, 280px);
+  aspect-ratio: 1 / 1;
+  height: auto;
+  max-height: none;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  mix-blend-mode: normal;
+  mask-image: none;
+}
+</style>
 </head>
 <body>
 <header class="topbar"><a class="brand" href="#home" aria-label="Башкы бет"><span class="brand-icon">📖</span><span>Талайкүл мугалим <span>♥</span></span></a><button class="menu-toggle" id="menuToggle" aria-label="Менюну ачуу">☰</button><nav id="nav"><a class="active" href="#home">Башкы бет</a><a href="#about">Мен жөнүндө</a><a href="#materials">Материалдар</a><a href="#achievements">Жетишкендиктер</a><a href="#gallery">Иш-чаралар</a><a href="#contact">Байланыш</a></nav><a class="pill top-contact" href="#contact">✉ Байланышуу</a></header>
