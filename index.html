@@ -64,6 +64,34 @@ mask-image:none;
   mix-blend-mode: normal;
   mask-image: none;
 }
+
+@media (max-width: 560px) {
+  .hero-photo-wrap {
+    position: relative !important;
+    min-height: 300px !important;
+    overflow: visible !important;
+  }
+
+  .portrait-ring {
+    width: 72% !important;
+    max-width: 300px !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 0 !important;
+  }
+
+  .hero-photo {
+    width: min(68%, 280px) !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    max-height: none !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    mask-image: none !important;
+    mix-blend-mode: normal !important;
+    z-index: 1 !important;
+  }
 </style>
 </head>
 <body>
