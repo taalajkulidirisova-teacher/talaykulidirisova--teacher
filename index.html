@@ -255,6 +255,32 @@ floral{position:absolute;z-index:2;font-size:48px;filter:drop-shadow(0 5px 5px #
 .hero-photo-wrap .portrait-ring {
   position: absolute !important;
   top: 50% !important;
+
+/* ПОРТРЕТ ЖАНА АЛТЫН РАМКА — АКЫРКЫ ОҢДОО */
+.hero-photo-wrap {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 330px !important;
+  overflow: visible !important;
+}
+
+.hero-photo-wrap .hero-photo {
+  position: relative !important;
+  display: block !important;
+  width: min(62%, 260px) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border-radius: 50% !important;
+  z-index: 2 !important;
+}
+
+.hero-photo-wrap .portrait-ring {
+  position: absolute !important;
+  top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   width: min(64%, 270px) !important;
@@ -263,26 +289,22 @@ floral{position:absolute;z-index:2;font-size:48px;filter:drop-shadow(0 5px 5px #
   border: 4px solid #e6b951 !important;
   border-radius: 50% !important;
   background: transparent !important;
+  box-shadow: 0 0 0 3px #ffffff70 !important;
   z-index: 3 !important;
   pointer-events: none !important;
 }
 
-.hero-photo-wrap .hero-photo {
-  position: relative !important;
-  width: min(62%, 260px) !important;
-  aspect-ratio: 1 / 1 !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-  border-radius: 50% !important;
-  z-index: 2 !important;
-}
-
 @media (max-width: 560px) {
-  .hero-photo-wrap .portrait-ring {
-    width: min(64%, 250px) !important;
+  .hero-photo-wrap {
+    min-height: 300px !important;
   }
+
   .hero-photo-wrap .hero-photo {
     width: min(62%, 240px) !important;
+  }
+
+  .hero-photo-wrap .portrait-ring {
+    width: min(64%, 250px) !important;
   }
 }
 </style>
