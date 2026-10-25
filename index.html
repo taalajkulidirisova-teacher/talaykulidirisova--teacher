@@ -68,6 +68,23 @@
 #aboutArea{width:100%;min-height:170px;padding:12px;border:1px solid #e7dbe0;border-radius:10px;font:inherit;margin-bottom:10px}
 .about-actions{display:flex;gap:10px;flex-wrap:wrap}
 @media(max-width:560px){.certificate{flex-basis:44%}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-card:last-child{grid-column:1/-1}}
+.gallery-card{min-height:170px}
+.cover{position:absolute;inset:0;display:grid;gap:2px;background:#fff}
+.cover img{width:100%;height:100%;object-fit:cover;display:block;min-height:0;min-width:0}
+.cover.n1{grid-template-columns:1fr}
+.cover.n2{grid-template-columns:1fr 1fr}
+.cover.n3,.cover.n4{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.cover.n3 img:first-child{grid-row:span 2}
+.gallery-label{z-index:2}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.ph{position:relative;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:#f3e9ec}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer}
+.phdel{position:absolute;top:4px;right:4px;background:#fffffff0}
+#lb{background:#000000e6;z-index:70;flex-direction:column;gap:10px;padding:10px}
+#lb img{max-width:100%;max-height:78vh;border-radius:8px;object-fit:contain}
+#lbCap{color:#fff;font-size:13px}
+.lbx{position:absolute;top:12px;right:12px;border:0;background:#ffffff33;color:#fff;border-radius:50%;width:40px;height:40px;font-size:18px;cursor:pointer}
+.lbn{position:absolute;top:50%;transform:translateY(-50%);border:0;background:#ffffff33;color:#fff;border-radius:50%;width:42px;height:42px;font-size:24px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -83,6 +100,7 @@
 <footer class="footer" id="contact"><div><p class="footer-name">Идирисова Талайкүл Орозобековна</p><div style="font-size:12px">Башталгыч класстын мугалими</div><div class="footer-school">«Ой-Тескен инновациялык жалпы билим берүү мектеби»</div><p class="footer-tag">Билим берип, тарбиялап,<br>келечекке жарык жол ачам! ♥</p></div><div class="contact-list"><div><span class="contact-icon">⌖</span><span>Кыргыз Республикасы<br>Нарын облусу, Ат-Башы району</span></div><div><span class="contact-icon">☎</span><span>Байланыш үчүн мугалим менен түз байланышыңыз</span></div><div><span class="contact-icon">✉</span><a href="mailto:talaykul.idirisova@mail.ru">talaykul.idirisova@mail.ru</a></div></div><div class="footer-quote">“ Мугалим деген —<br>жөн гана кесип эмес,<br>ал — жүрөктүн иши. ♡</div><div class="socials"><a href="#contact" aria-label="Facebook">f</a><a href="#contact" aria-label="Instagram">◎</a><a href="#contact" aria-label="Telegram">➤</a><a href="#contact" aria-label="WhatsApp">◔</a></div></footer><div class="copyright">© 2026 Таалайкүл мугалим · Билимге сүйүү менен <a href="#" id="lockBtn">🔒 Мугалим кирүүсү</a></div>
 <div class="modal" id="matModal" role="dialog" aria-modal="true"><div class="modal-card wide"><button class="close-modal" id="closeMat" aria-label="Жабуу">✕</button><h2 id="matTitle"></h2><div class="tabs" id="tabs"><button class="tab active" data-g="1">1-класс</button><button class="tab" data-g="2">2-класс</button><button class="tab" data-g="3">3-класс</button><button class="tab" data-g="4">4-класс</button></div><div id="fileList"></div><div id="uploadBox" style="display:none"><h3>➕ Жаңы материал кошуу</h3><p id="upTarget"></p><input id="upTitle" placeholder="Материалдын аталышы"><input id="upFile" type="file" multiple><button class="pill" id="uploadBtn">Жүктөө</button><p id="upMsg"></p></div></div></div>
 <div class="modal" id="loginModal" role="dialog" aria-modal="true"><div class="modal-card"><h2>Мугалим кирүүсү</h2><input id="lgEmail" type="email" placeholder="Email"><input id="lgPass" type="password" placeholder="Сырсөз"><button class="pill" id="loginBtn">Кирүү</button><p id="lgMsg"></p></div></div>
+<div class="modal" id="lb"><button class="lbx" id="lbClose" aria-label="Жабуу">✕</button><button class="lbn" id="lbPrev" style="left:8px" aria-label="Мурунку">‹</button><img id="lbImg" alt=""><button class="lbn" id="lbNext" style="right:8px" aria-label="Кийинки">›</button><div id="lbCap"></div></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.js"></script>
 <script>
 const menu=document.getElementById('menuToggle'),nav=document.getElementById('nav');menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
@@ -94,16 +112,38 @@ const $=id=>document.getElementById(id),mm=$('matModal'),lm=$('loginModal');
 function setTeacher(v){isTeacher=v;$('aboutBtn').style.display=v?'inline-flex':'none';$('uploadBox').style.display=v?'block':'none';$('lockBtn').textContent=v?'🔓 Чыгуу':'🔒 Мугалим кирүүсү';if(mm.classList.contains('open'))loadFiles()}
 if(sb){sb.auth.getSession().then(({data})=>setTeacher(!!data.session));sb.auth.onAuthStateChange((_e,s)=>setTeacher(!!s))}
 function renderTabs(){document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',+t.dataset.g===grade));$('upTarget').textContent='Жүктөлө турган жер: '+subject+(grade?', '+grade+'-класс':'')}
+let photoList=[],lbIdx=0;
+async function delItem(m){if(!confirm('Өчүрүүбү?'))return;await sb.storage.from('materials').remove([m.file_path]);await sb.from('materials').delete().eq('id',m.id);loadFiles();loadCerts();loadCovers()}
 async function loadFiles(){
  const box=$('fileList');box.textContent='Жүктөлүүдө...';
  if(!sb){box.textContent='Сайт азырынча маалымат базасына туташкан жок.';return}
  const {data,error}=await sb.from('materials').select('*').eq('subject',subject).eq('grade',grade).order('created_at',{ascending:false});
  if(error){box.textContent='Ката: '+error.message;return}
- if(!data.length){box.textContent='Бул класска азырынча материал жок.';return}
+ if(!data.length){box.textContent='Азырынча материал жок.';return}
  box.textContent='';
- data.forEach(m=>{const row=document.createElement('div');row.className='file-row';const a=document.createElement('a');a.href=m.file_url;a.target='_blank';a.rel='noopener';a.style.display='flex';a.style.alignItems='center';if(isImg(m.file_path)){const im=document.createElement('img');im.src=m.file_url;im.className='th';im.loading='lazy';a.appendChild(im)}a.appendChild(document.createTextNode((isImg(m.file_path)?'':'📄 ')+m.title));row.appendChild(a);
-  if(isTeacher){const d=document.createElement('button');d.className='del';d.textContent='🗑';d.onclick=async()=>{if(!confirm('Өчүрүүбү?'))return;await sb.storage.from('materials').remove([m.file_path]);await sb.from('materials').delete().eq('id',m.id);loadFiles();loadCerts()};row.appendChild(d)}
+ const imgs=data.filter(m=>isImg(m.file_path)),others=data.filter(m=>!isImg(m.file_path));
+ photoList=imgs;
+ if(imgs.length){
+  const g=document.createElement('div');g.className='photos';box.appendChild(g);
+  let shown=0;const more=document.createElement('button');more.className='pill outline';more.textContent='Дагы көрсөтүү';more.style.margin='12px auto 0';
+  const draw=()=>{imgs.slice(shown,shown+30).forEach((m,k)=>{const i=shown+k;const w=document.createElement('div');w.className='ph';
+   const im=document.createElement('img');im.src=m.file_url;im.loading='lazy';im.alt=m.title;im.onclick=()=>openLb(i);w.appendChild(im);
+   if(isTeacher){const d=document.createElement('button');d.className='del phdel';d.textContent='🗑';d.onclick=()=>delItem(m);w.appendChild(d)}
+   g.appendChild(w)});
+   shown=Math.min(imgs.length,shown+30);more.style.display=shown<imgs.length?'flex':'none'};
+  more.onclick=draw;box.appendChild(more);draw()}
+ others.forEach(m=>{const row=document.createElement('div');row.className='file-row';const a=document.createElement('a');a.href=m.file_url;a.target='_blank';a.rel='noopener';a.textContent='📄 '+m.title;row.appendChild(a);
+  if(isTeacher){const d=document.createElement('button');d.className='del';d.textContent='🗑';d.onclick=()=>delItem(m);row.appendChild(d)}
   box.appendChild(row)})}
+const lb=$('lb');
+function showLb(){const m=photoList[lbIdx];$('lbImg').src=m.file_url;$('lbCap').textContent=(lbIdx+1)+' / '+photoList.length+(/\.\w{3,4}$/.test(m.title)?'':' · '+m.title)}
+function openLb(i){lbIdx=i;showLb();lb.classList.add('open')}
+function stepLb(d){lbIdx=(lbIdx+d+photoList.length)%photoList.length;showLb()}
+$('lbPrev').onclick=()=>stepLb(-1);$('lbNext').onclick=()=>stepLb(1);$('lbClose').onclick=()=>lb.classList.remove('open');
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open')});
+let tx=0;lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)stepLb(dx<0?1:-1)});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')stepLb(-1);if(e.key==='ArrowRight')stepLb(1)});
 document.querySelectorAll('[data-subject]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();subject=a.dataset.subject;grade=a.hasAttribute('data-nograde')?0:1;$('tabs').style.display=grade?'flex':'none';$('matTitle').textContent=subject;renderTabs();mm.classList.add('open');loadFiles()}));
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{grade=+t.dataset.g;renderTabs();loadFiles()});
 $('closeMat').onclick=()=>mm.classList.remove('open');
@@ -114,7 +154,7 @@ $('uploadBtn').onclick=async()=>{
  const fs=[...$('upFile').files],msg=$('upMsg');
  if(!fs.length){msg.textContent='Файл тандаңыз';return}
  const one=$('upTitle').value.trim();
- for(let i=0;i<fs.length;i++){const f=fs[i];
+ for(let i=0;i<fs.length;i++){const f=await shrink(fs[i]);
   msg.textContent='Жүктөлүүдө '+(i+1)+'/'+fs.length+'...';
   const path=Date.now()+'_'+i+'_'+f.name.replace(/[^\w.\-]/g,'_');
   const up=await sb.storage.from('materials').upload(path,f);
@@ -122,7 +162,7 @@ $('uploadBtn').onclick=async()=>{
   const url=sb.storage.from('materials').getPublicUrl(path).data.publicUrl;
   const ins=await sb.from('materials').insert({subject,grade,title:(fs.length==1&&one)?one:f.name,file_url:url,file_path:path});
   if(ins.error){msg.textContent='Ката: '+ins.error.message;return}}
- msg.textContent='✅ Жүктөлдү';$('upFile').value='';$('upTitle').value='';loadFiles();loadCerts()};
+ msg.textContent='✅ Жүктөлдү';$('upFile').value='';$('upTitle').value='';loadFiles();loadCerts();loadCovers()};
 
 const isImg=p=>/\.(jpe?g|png|gif|webp)$/i.test(p);
 async function loadCerts(){
@@ -147,6 +187,24 @@ $('aboutSave').onclick=async()=>{
  const {error}=await sb.from('site_text').upsert({key:'about',value:v,updated_at:new Date().toISOString()});
  if(error){alert('Ката: '+error.message);return}
  $('aboutEdit').style.display='none';loadAbout()};
-loadCerts();loadAbout();
+async function loadCovers(){
+ if(!sb)return;
+ for(const card of document.querySelectorAll('.gallery-card')){
+  const {data}=await sb.from('materials').select('file_url,file_path').eq('subject',card.dataset.subject).order('created_at',{ascending:false}).limit(30);
+  const imgs=(data||[]).filter(m=>isImg(m.file_path)).slice(0,4);
+  let c=card.querySelector('.cover');if(c)c.remove();
+  const sc=card.querySelector('.scene');
+  if(!imgs.length){sc.style.display='';continue}
+  c=document.createElement('div');c.className='cover n'+imgs.length;
+  imgs.forEach(m=>{const im=document.createElement('img');im.src=m.file_url;im.loading='lazy';im.alt='';c.appendChild(im)});
+  card.prepend(c);sc.style.display='none'}}
+async function shrink(f){
+ if(!/^image\/(jpeg|png|webp)$/.test(f.type))return f;
+ try{const bmp=await createImageBitmap(f);const k=Math.min(1,1600/Math.max(bmp.width,bmp.height));
+  const c=document.createElement('canvas');c.width=Math.round(bmp.width*k);c.height=Math.round(bmp.height*k);
+  c.getContext('2d').drawImage(bmp,0,0,c.width,c.height);
+  const b=await new Promise(r=>c.toBlob(r,'image/jpeg',.85));
+  return b?new File([b],f.name.replace(/\.\w+$/,'')+'.jpg',{type:'image/jpeg'}):f}catch(e){return f}}
+loadCerts();loadAbout();loadCovers();
 </script>
 </body></html>
