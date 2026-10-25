@@ -53,32 +53,47 @@
 #uploadBox{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
 #upMsg,#lgMsg{font-size:13px;color:#c52d5e}
 #lockBtn{color:#6a7990;text-decoration:underline;margin-left:10px}
+
+/* СЕРТИФИКАТТАР / ГАЛЕРЕЯ / МЕН ЖӨНҮНДӨ */
+.certificates{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;min-width:0}
+.certificates::-webkit-scrollbar{display:none}
+.certificate{flex:0 0 calc(20% - 10px);min-width:110px;scroll-snap-align:start;color:inherit;display:block}
+.certificate:last-child{display:block}
+.cert-paper img{width:100%;height:100%;object-fit:cover;border-radius:3px}
+.gallery-grid{grid-template-columns:repeat(3,1fr)}
+.gallery-card{cursor:pointer;min-height:150px}
+.file-row img.th{width:56px;height:56px;object-fit:cover;border-radius:8px;margin-right:10px;flex-shrink:0}
+.about-card{background:#fff;border-radius:22px;box-shadow:var(--shadow);padding:22px;max-width:820px;margin:0 auto}
+#aboutText{white-space:pre-line;line-height:1.7;margin:0 0 14px}
+#aboutArea{width:100%;min-height:170px;padding:12px;border:1px solid #e7dbe0;border-radius:10px;font:inherit;margin-bottom:10px}
+.about-actions{display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:560px){.certificate{flex-basis:44%}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-card:last-child{grid-column:1/-1}}
 </style>
 </head>
 <body>
 <header class="topbar"><a class="brand" href="#home" aria-label="Башкы бет"><span class="brand-icon">📖</span><span>Талайкүл мугалим <span>♥</span></span></a><button class="menu-toggle" id="menuToggle" aria-label="Менюну ачуу">☰</button><nav id="nav"><a class="active" href="#home">Башкы бет</a><a href="#about">Мен жөнүндө</a><a href="#materials">Материалдар</a><a href="#achievements">Жетишкендиктер</a><a href="#gallery">Иш-чаралар</a><a href="#contact">Байланыш</a></nav><a class="pill top-contact" href="#contact">✉ Байланышуу</a></header>
 <main>
 <section class="hero" id="home"><div class="hero-copy"><p class="eyebrow">Мугалим — жүрөккө жарык берген кесип! <span style="font-style:normal">♥</span></p><h1>ИДИРИСОВА<br>ТАЛАЙКҮЛ<br>ОРОЗОБЕКОВНА</h1><div class="role">Башталгыч класстын мугалими</div><div class="school">«Ой-Тескен инновациялык жалпы билим берүү мектеби»</div><div class="quote"><span class="quote-mark">“</span><span>Ар бир бала — өзгөчө инсан.<br>Анын жөндөмүн ачуу — мугалимдин эң чоң милдети.</span></div><div class="actions"><a class="pill navy" href="#about">♙ Мен жөнүндө</a><a class="pill" href="#materials">▤ Материалдарды көрүү</a></div></div><div class="hero-photo-wrap"><span class="heart-doodle">♡</span><span class="floral left">🌸</span><div class="portrait-frame"><img class="hero-photo" src="taalaykul.jpg" alt="Идирисова Таалайкүл Орозобековна"></div><span class="floral right">🌸</span></div></section>
-<section class="values reveal" id="about"><div class="value"><span class="emoji" style="color:#f36b9a">♡</span><span>Ар бир балага<br>жеке мамиле</span></div><div class="value"><span class="emoji" style="color:#4b8bcf">☆</span><span>Сапаттуу билим<br>берүүгө умтулуу</span></div><div class="value"><span class="emoji" style="color:#efa52a">♧</span><span>Чыгармачылыкка жана<br>изденүүгө шыктандыруу</span></div><div class="value"><span class="emoji" style="color:#f36b9a">♡</span><span>Боорукердик жана<br>сый-урмат принциби</span></div><div class="value"><span class="emoji" style="color:#38a76a">⌂</span><span>Келечекке ишеним менен<br>кадам таштайбыз</span></div></section>
+<section class="values reveal"><div class="value"><span class="emoji" style="color:#f36b9a">♡</span><span>Ар бир балага<br>жеке мамиле</span></div><div class="value"><span class="emoji" style="color:#4b8bcf">☆</span><span>Сапаттуу билим<br>берүүгө умтулуу</span></div><div class="value"><span class="emoji" style="color:#efa52a">♧</span><span>Чыгармачылыкка жана<br>изденүүгө шыктандыруу</span></div><div class="value"><span class="emoji" style="color:#f36b9a">♡</span><span>Боорукердик жана<br>сый-урмат принциби</span></div><div class="value"><span class="emoji" style="color:#38a76a">⌂</span><span>Келечекке ишеним менен<br>кадам таштайбыз</span></div></section>
+<section class="section reveal" id="about"><h2 class="section-title">МЕН ЖӨНҮНДӨ</h2><div class="about-card"><p id="aboutText">Жүктөлүүдө...</p><div id="aboutEdit" style="display:none"><textarea id="aboutArea" placeholder="Өзүңүз жөнүндө жазыңыз..."></textarea><button class="pill" id="aboutSave">Сактоо</button></div><div class="about-actions"><a class="pill outline" href="#about" data-subject="Мен жөнүндө" data-nograde>📂 Файлдар жана сүрөттөр</a><button class="pill navy" id="aboutBtn" style="display:none">✏️ Тексти өзгөртүү</button></div></div></section>
 <section class="section reveal" id="materials"><h2 class="section-title">ОКУУ-МЕТОДИКАЛЫК МАТЕРИАЛДАР</h2><div class="materials"><article class="material blue-card"><div class="icon">①②③</div><h3>Математика</h3><p>Сабактын иштелмелери, дидактикалык материалдар, КТП, предметтик стандарт жана ачык сабактар.</p><a href="#materials" data-subject="Математика">Көрүү →</a></article><article class="material green-card"><div class="icon">✎</div><h3>Кыргыз тили</h3><p>Сабактын иштелмелери, дидактикалык материалдар, КТП, предметтик стандарт жана ачык сабактар.</p><a href="#materials" data-subject="Кыргыз тили">Көрүү →</a></article><article class="material purple-card"><div class="icon">▤</div><h3>Адабий окуу</h3><p>Сабактын иштелмелери, дидактикалык материалдар, КТП, предметтик стандарт жана ачык сабактар.</p><a href="#materials" data-subject="Адабий окуу">Көрүү →</a></article><article class="material gold-card"><div class="icon">🌍</div><h3>Мен жана дүйнө</h3><p>Сабактын иштелмелери, дидактикалык материалдар, КТП, предметтик стандарт жана ачык сабактар.</p><a href="#materials" data-subject="Мен жана дүйнө">Көрүү →</a></article><article class="material pink-card"><div class="icon">🎨</div><h3>Көркөм өнөр</h3><p>Сабактын иштелмелери, дидактикалык материалдар, КТП, предметтик стандарт жана ачык сабактар.</p><a href="#materials" data-subject="Көркөм өнөр">Көрүү →</a></article></div></section>
-<section class="achievements reveal" id="achievements"><div class="ach-title"><div class="trophy">🏆</div><div><h2>ЖЕТИШКЕНДИКТЕРИМ</h2><p>Эмгек жолумдагы сыйлыктар<br>жана жетишкендиктерим</p><a class="gold-link" href="#gallery">Баарын көрүү →</a></div></div><div class="certificates"><div class="certificate"><div class="cert-paper"><b>АРДАК ГРАМОТА</b><span>Билим берүү тармагындагы эмгеги үчүн</span></div><p>Ардак грамота</p></div><div class="certificate"><div class="cert-paper"><b>ЫРААЗЫЧЫЛЫК КАТ</b><span>Ийгиликтер жана үзүрлүү эмгек</span></div><p>Ыраазычылык кат</p></div><div class="certificate"><div class="cert-paper"><b>СЕРТИФИКАТ</b><span>Кесиптик өнүгүү</span></div><p>Сертификат</p></div><div class="certificate"><div class="cert-paper"><b>ДИПЛОМ</b><span>Билим жана чыгармачылык</span></div><p>Диплом</p></div><div class="certificate"><div class="cert-paper"><b>СЕРТИФИКАТ</b><span>Окутуу жана өнүгүү</span></div><p>Сертификат</p></div></div><div class="carousel-buttons"><button class="circle-btn" aria-label="Мурунку сыйлык" id="prevCert">‹</button><button class="circle-btn" aria-label="Кийинки сыйлык" id="nextCert">›</button></div></section>
-<section class="section gallery reveal" id="gallery"><h2 class="section-title">ИШ-ЧАРАЛАР ЖАНА ОКУУЧУЛАРЫМ</h2><div class="gallery-grid"><div class="gallery-card"><span class="scene">👩‍🏫📚</span><span class="gallery-label">Кызыктуу сабактар</span></div><div class="gallery-card"><span class="scene">🌱🧒👧</span><span class="gallery-label">Табиятты үйрөнөбүз</span></div><div class="gallery-card"><span class="scene">🧑‍🎨🎨</span><span class="gallery-label">Чыгармачылык иштер</span></div><div class="gallery-card"><span class="scene">🎓📖</span><span class="gallery-label">Окуу ийгиликтери</span></div><div class="gallery-card"><span class="scene">🎈👧🧒</span><span class="gallery-label">Майрамдык иш-чаралар</span></div></div><div class="gallery-more"><a class="pill outline" href="#contact">Материалдар жана сүрөттөр боюнча байланышуу →</a></div></section>
+<section class="achievements reveal" id="achievements"><div class="ach-title"><div class="trophy">🏆</div><div><h2>ЖЕТИШКЕНДИКТЕРИМ</h2><p>Эмгек жолумдагы сыйлыктар<br>жана жетишкендиктерим</p><a class="gold-link" href="#achievements" data-subject="Сертификаттар" data-nograde>Баарын көрүү →</a></div></div><div class="certificates" id="certs"><div class="certificate"><div class="cert-paper"><b>АРДАК ГРАМОТА</b><span>Билим берүү тармагындагы эмгеги үчүн</span></div><p>Ардак грамота</p></div><div class="certificate"><div class="cert-paper"><b>ЫРААЗЫЧЫЛЫК КАТ</b><span>Ийгиликтер жана үзүрлүү эмгек</span></div><p>Ыраазычылык кат</p></div><div class="certificate"><div class="cert-paper"><b>СЕРТИФИКАТ</b><span>Кесиптик өнүгүү</span></div><p>Сертификат</p></div><div class="certificate"><div class="cert-paper"><b>ДИПЛОМ</b><span>Билим жана чыгармачылык</span></div><p>Диплом</p></div><div class="certificate"><div class="cert-paper"><b>СЕРТИФИКАТ</b><span>Окутуу жана өнүгүү</span></div><p>Сертификат</p></div></div><div class="carousel-buttons"><button class="circle-btn" aria-label="Мурунку сыйлык" id="prevCert">‹</button><button class="circle-btn" aria-label="Кийинки сыйлык" id="nextCert">›</button></div></section>
+<section class="section gallery reveal" id="gallery"><h2 class="section-title">ИШ-ЧАРАЛАР ЖАНА ОКУУЧУЛАРЫМ</h2><div class="gallery-grid"><div class="gallery-card" data-subject="Ачык сабактар" data-nograde><span class="scene">👩‍🏫📚</span><span class="gallery-label">Ачык сабактар</span></div><div class="gallery-card" data-subject="Окуучулардын ийгиликтери" data-nograde><span class="scene">🏆🎓</span><span class="gallery-label">Окуучулардын ийгиликтери</span></div><div class="gallery-card" data-subject="Майрамдык иш-чаралар" data-nograde><span class="scene">🎈👧🧒</span><span class="gallery-label">Майрамдык иш-чаралар</span></div></div><div class="gallery-more"><a class="pill outline" href="#contact">Материалдар жана сүрөттөр боюнча байланышуу →</a></div></section>
 </main>
 <footer class="footer" id="contact"><div><p class="footer-name">Идирисова Талайкүл Орозобековна</p><div style="font-size:12px">Башталгыч класстын мугалими</div><div class="footer-school">«Ой-Тескен инновациялык жалпы билим берүү мектеби»</div><p class="footer-tag">Билим берип, тарбиялап,<br>келечекке жарык жол ачам! ♥</p></div><div class="contact-list"><div><span class="contact-icon">⌖</span><span>Кыргыз Республикасы<br>Нарын облусу, Ат-Башы району</span></div><div><span class="contact-icon">☎</span><span>Байланыш үчүн мугалим менен түз байланышыңыз</span></div><div><span class="contact-icon">✉</span><a href="mailto:talaykul.idirisova@mail.ru">talaykul.idirisova@mail.ru</a></div></div><div class="footer-quote">“ Мугалим деген —<br>жөн гана кесип эмес,<br>ал — жүрөктүн иши. ♡</div><div class="socials"><a href="#contact" aria-label="Facebook">f</a><a href="#contact" aria-label="Instagram">◎</a><a href="#contact" aria-label="Telegram">➤</a><a href="#contact" aria-label="WhatsApp">◔</a></div></footer><div class="copyright">© 2026 Таалайкүл мугалим · Билимге сүйүү менен <a href="#" id="lockBtn">🔒 Мугалим кирүүсү</a></div>
-<div class="modal" id="matModal" role="dialog" aria-modal="true"><div class="modal-card wide"><button class="close-modal" id="closeMat" aria-label="Жабуу">✕</button><h2 id="matTitle"></h2><div class="tabs"><button class="tab active" data-g="1">1-класс</button><button class="tab" data-g="2">2-класс</button><button class="tab" data-g="3">3-класс</button><button class="tab" data-g="4">4-класс</button></div><div id="fileList"></div><div id="uploadBox" style="display:none"><h3>➕ Жаңы материал кошуу</h3><p id="upTarget"></p><input id="upTitle" placeholder="Материалдын аталышы"><input id="upFile" type="file"><button class="pill" id="uploadBtn">Жүктөө</button><p id="upMsg"></p></div></div></div>
+<div class="modal" id="matModal" role="dialog" aria-modal="true"><div class="modal-card wide"><button class="close-modal" id="closeMat" aria-label="Жабуу">✕</button><h2 id="matTitle"></h2><div class="tabs" id="tabs"><button class="tab active" data-g="1">1-класс</button><button class="tab" data-g="2">2-класс</button><button class="tab" data-g="3">3-класс</button><button class="tab" data-g="4">4-класс</button></div><div id="fileList"></div><div id="uploadBox" style="display:none"><h3>➕ Жаңы материал кошуу</h3><p id="upTarget"></p><input id="upTitle" placeholder="Материалдын аталышы"><input id="upFile" type="file" multiple><button class="pill" id="uploadBtn">Жүктөө</button><p id="upMsg"></p></div></div></div>
 <div class="modal" id="loginModal" role="dialog" aria-modal="true"><div class="modal-card"><h2>Мугалим кирүүсү</h2><input id="lgEmail" type="email" placeholder="Email"><input id="lgPass" type="password" placeholder="Сырсөз"><button class="pill" id="loginBtn">Кирүү</button><p id="lgMsg"></p></div></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.js"></script>
 <script>
 const menu=document.getElementById('menuToggle'),nav=document.getElementById('nav');menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
-let certOffset=0;const certs=[...document.querySelectorAll('.certificate')];function rotateCerts(dir){certOffset=(certOffset+dir+certs.length)%certs.length;const parent=document.querySelector('.certificates');certs.forEach((el,i)=>{const idx=(i+certOffset)%certs.length;parent.appendChild(certs[idx])})}document.getElementById('prevCert').addEventListener('click',()=>rotateCerts(-1));document.getElementById('nextCert').addEventListener('click',()=>rotateCerts(1));
 const SUPABASE_URL='https://wkyvvdutolpstkpvyrgt.supabase.co',SUPABASE_KEY='sb_publishable_W23I_CJBuQRYUdevD2aWRg_VoILYRmn';
 const sb=(SUPABASE_URL.startsWith('https://')&&SUPABASE_KEY.length>20)?supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
 let subject='',grade=1,isTeacher=false;
 const $=id=>document.getElementById(id),mm=$('matModal'),lm=$('loginModal');
-function setTeacher(v){isTeacher=v;$('uploadBox').style.display=v?'block':'none';$('lockBtn').textContent=v?'🔓 Чыгуу':'🔒 Мугалим кирүүсү';if(mm.classList.contains('open'))loadFiles()}
+function setTeacher(v){isTeacher=v;$('aboutBtn').style.display=v?'inline-flex':'none';$('uploadBox').style.display=v?'block':'none';$('lockBtn').textContent=v?'🔓 Чыгуу':'🔒 Мугалим кирүүсү';if(mm.classList.contains('open'))loadFiles()}
 if(sb){sb.auth.getSession().then(({data})=>setTeacher(!!data.session));sb.auth.onAuthStateChange((_e,s)=>setTeacher(!!s))}
-function renderTabs(){document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',+t.dataset.g===grade));$('upTarget').textContent='Жүктөлө турган жер: '+subject+', '+grade+'-класс'}
+function renderTabs(){document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',+t.dataset.g===grade));$('upTarget').textContent='Жүктөлө турган жер: '+subject+(grade?', '+grade+'-класс':'')}
 async function loadFiles(){
  const box=$('fileList');box.textContent='Жүктөлүүдө...';
  if(!sb){box.textContent='Сайт азырынча маалымат базасына туташкан жок.';return}
@@ -86,26 +101,52 @@ async function loadFiles(){
  if(error){box.textContent='Ката: '+error.message;return}
  if(!data.length){box.textContent='Бул класска азырынча материал жок.';return}
  box.textContent='';
- data.forEach(m=>{const row=document.createElement('div');row.className='file-row';const a=document.createElement('a');a.href=m.file_url;a.target='_blank';a.rel='noopener';a.textContent='📄 '+m.title;row.appendChild(a);
-  if(isTeacher){const d=document.createElement('button');d.className='del';d.textContent='🗑';d.onclick=async()=>{if(!confirm('Өчүрүүбү?'))return;await sb.storage.from('materials').remove([m.file_path]);await sb.from('materials').delete().eq('id',m.id);loadFiles()};row.appendChild(d)}
+ data.forEach(m=>{const row=document.createElement('div');row.className='file-row';const a=document.createElement('a');a.href=m.file_url;a.target='_blank';a.rel='noopener';a.style.display='flex';a.style.alignItems='center';if(isImg(m.file_path)){const im=document.createElement('img');im.src=m.file_url;im.className='th';im.loading='lazy';a.appendChild(im)}a.appendChild(document.createTextNode((isImg(m.file_path)?'':'📄 ')+m.title));row.appendChild(a);
+  if(isTeacher){const d=document.createElement('button');d.className='del';d.textContent='🗑';d.onclick=async()=>{if(!confirm('Өчүрүүбү?'))return;await sb.storage.from('materials').remove([m.file_path]);await sb.from('materials').delete().eq('id',m.id);loadFiles();loadCerts()};row.appendChild(d)}
   box.appendChild(row)})}
-document.querySelectorAll('[data-subject]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();subject=a.dataset.subject;grade=1;$('matTitle').textContent=subject;renderTabs();mm.classList.add('open');loadFiles()}));
+document.querySelectorAll('[data-subject]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();subject=a.dataset.subject;grade=a.hasAttribute('data-nograde')?0:1;$('tabs').style.display=grade?'flex':'none';$('matTitle').textContent=subject;renderTabs();mm.classList.add('open');loadFiles()}));
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{grade=+t.dataset.g;renderTabs();loadFiles()});
 $('closeMat').onclick=()=>mm.classList.remove('open');
 [mm,lm].forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open')}));
 $('lockBtn').onclick=async e=>{e.preventDefault();if(!sb){alert('Алгач Supabase туташтырыңыз');return}if(isTeacher){await sb.auth.signOut()}else{lm.classList.add('open')}};
 $('loginBtn').onclick=async()=>{if(!sb)return;const {error}=await sb.auth.signInWithPassword({email:$('lgEmail').value.trim(),password:$('lgPass').value});$('lgMsg').textContent=error?'Email же сырсөз туура эмес':'';if(!error)lm.classList.remove('open')};
 $('uploadBtn').onclick=async()=>{
- const f=$('upFile').files[0],msg=$('upMsg');
- if(!f){msg.textContent='Файл тандаңыз';return}
- const t=$('upTitle').value.trim()||f.name;
- msg.textContent='Жүктөлүүдө...';
- const path=Date.now()+'_'+f.name.replace(/[^\w.\-]/g,'_');
- const up=await sb.storage.from('materials').upload(path,f);
- if(up.error){msg.textContent='Ката: '+up.error.message;return}
- const url=sb.storage.from('materials').getPublicUrl(path).data.publicUrl;
- const ins=await sb.from('materials').insert({subject,grade,title:t,file_url:url,file_path:path});
- if(ins.error){msg.textContent='Ката: '+ins.error.message;return}
- msg.textContent='✅ Жүктөлдү';$('upFile').value='';$('upTitle').value='';loadFiles()};
+ const fs=[...$('upFile').files],msg=$('upMsg');
+ if(!fs.length){msg.textContent='Файл тандаңыз';return}
+ const one=$('upTitle').value.trim();
+ for(let i=0;i<fs.length;i++){const f=fs[i];
+  msg.textContent='Жүктөлүүдө '+(i+1)+'/'+fs.length+'...';
+  const path=Date.now()+'_'+i+'_'+f.name.replace(/[^\w.\-]/g,'_');
+  const up=await sb.storage.from('materials').upload(path,f);
+  if(up.error){msg.textContent='Ката: '+up.error.message;return}
+  const url=sb.storage.from('materials').getPublicUrl(path).data.publicUrl;
+  const ins=await sb.from('materials').insert({subject,grade,title:(fs.length==1&&one)?one:f.name,file_url:url,file_path:path});
+  if(ins.error){msg.textContent='Ката: '+ins.error.message;return}}
+ msg.textContent='✅ Жүктөлдү';$('upFile').value='';$('upTitle').value='';loadFiles();loadCerts()};
+
+const isImg=p=>/\.(jpe?g|png|gif|webp)$/i.test(p);
+async function loadCerts(){
+ if(!sb)return;
+ const {data}=await sb.from('materials').select('*').eq('subject','Сертификаттар').order('created_at',{ascending:false});
+ if(!data||!data.length)return;
+ const box=$('certs');box.textContent='';
+ data.forEach(m=>{const d=document.createElement('a');d.className='certificate';d.href=m.file_url;d.target='_blank';d.rel='noopener';
+  const p=document.createElement('div');p.className='cert-paper';
+  if(isImg(m.file_path)){const im=document.createElement('img');im.src=m.file_url;im.alt=m.title;im.loading='lazy';p.appendChild(im)}else{const b=document.createElement('b');b.textContent='📄 PDF/файл';p.appendChild(b)}
+  const t=document.createElement('p');t.textContent=m.title;d.appendChild(p);d.appendChild(t);box.appendChild(d)})}
+$('prevCert').onclick=()=>$('certs').scrollBy({left:-240,behavior:'smooth'});
+$('nextCert').onclick=()=>$('certs').scrollBy({left:240,behavior:'smooth'});
+const DEF='Мугалим жөнүндө маалымат ушул жерге жазылат.';
+async function loadAbout(){
+ if(!sb){$('aboutText').textContent=DEF;return}
+ const {data}=await sb.from('site_text').select('value').eq('key','about').maybeSingle();
+ $('aboutText').textContent=(data&&data.value)||DEF}
+$('aboutBtn').onclick=()=>{const t=$('aboutText').textContent;$('aboutArea').value=t===DEF?'':t;$('aboutEdit').style.display='block'};
+$('aboutSave').onclick=async()=>{
+ const v=$('aboutArea').value.trim();
+ const {error}=await sb.from('site_text').upsert({key:'about',value:v,updated_at:new Date().toISOString()});
+ if(error){alert('Ката: '+error.message);return}
+ $('aboutEdit').style.display='none';loadAbout()};
+loadCerts();loadAbout();
 </script>
 </body></html>
