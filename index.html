@@ -236,7 +236,7 @@ footer .sc{font-family:var(--f-script);font-style:italic;font-weight:500;color:v
       <svg class="fl" style="right:-2%;bottom:14%;width:130px;--r0:8deg;animation-delay:-2s"><use href="#flower"/></svg>
       <svg class="fl" style="left:4%;top:20%;width:36px;--r0:-20deg"><use href="#leaf"/></svg>
       <svg class="heart-t" viewBox="0 0 80 70" fill="none" stroke="#f0647f" stroke-width="2" aria-hidden="true"><path d="M40 62C10 42 6 22 20 12c9-6 17 0 20 8 3-8 11-14 20-8 14 10 10 30-20 50Z"/></svg>
-      <div class="ring"><img src="portrait.png" alt="Идирисова Таалайкүл Орозобековна — башталгыч класстын мугалими"></div>
+      <div class="ring"><img src="teacher-photo.png" alt="Идирисова Таалайкүл Орозобековна — башталгыч класстын мугалими"></div>
     </div>
   </div>
 </div>
@@ -353,7 +353,7 @@ async function loadTree(){
   if(TREE)return TREE;
   try{
     let o=REPO.owner,n=REPO.name;const h=location.hostname;
-    if(/\.github\.io$/.test(h)){o=h.split('.')[0];n=h}
+    if(/\.github\.io$/.test(h)){o=h.split('.')[0];const sg=location.pathname.split('/')[1];n=(sg&&!/\.html?$/i.test(sg))?decodeURIComponent(sg):h}
     let j=null;
     for(const br of ['main','master','HEAD']){
       const r=await fetch(`https://api.github.com/repos/${o}/${n}/git/trees/${br}?recursive=1`);
@@ -388,8 +388,8 @@ async function showGrade(g){
 }
 function openMat(i){
   curS=SUBJECTS[i].t;$('#mp-t').textContent=curS;
-  $('#mp-tabs').innerHTML='<button data-g="all">1–4-класс (жалпы)</button>'+[1,2,3,4].map(g=>`<button data-g="${g}">${g}-класс</button>`).join('');
-  showGrade('all');mp.classList.add('show');
+  $('#mp-tabs').innerHTML=[1,2,3,4].map(g=>`<button data-g="${g}">${g}-класс</button>`).join('');
+  showGrade(1);mp.classList.add('show');
 }
 $('#mp-tabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b)showGrade(b.dataset.g)});
 document.addEventListener('click',e=>{
