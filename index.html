@@ -359,7 +359,7 @@ async function loadTree(){
       const r=await fetch(`https://api.github.com/repos/${o}/${n}/git/trees/${br}?recursive=1`);
       if(r.ok){j=await r.json();break}
     }
-    TREE=((j&&j.tree)||[]).filter(x=>x.type==='blob'&&/^(materials|certificates)\//.test(x.path)).map(x=>x.path);
+    TREE=((j&&j.tree)||[]).filter(x=>x.type==='blob'&&/^(materials|certificates|сертификат[^/]*)\//i.test(x.path)).map(x=>x.path);
   }catch(e){TREE=[]}
   return TREE;
 }
@@ -410,10 +410,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove(
 
 /* Сертификаттар: "certificates" папкасындагы бардык сүрөттөр автоматтык түрдө кошулат */
 loadTree().then(t=>{
-  const imgs=t.filter(q=>/^certificates\/[^/]+\.(jpe?g|png|webp)$/i.test(q)).sort((a,b)=>a.localeCompare(b,'ky',{numeric:true}));
+  const imgs=t.filter(q=>/^(certificates|сертификат[^/]*)\/[^/]+\.(jpe?g|png|webp)$/i.test(q)).sort((a,b)=>a.localeCompare(b,'ky',{numeric:true}));
   if(!imgs.length)return;
   CERTS=imgs.map(q=>{
     const base=q.split('/')[1].replace(/\.[^.]+$/,''),parts=base.split('_');
+    if(/^(scan|img|image|photo|\d)/i.test(base))return {t:'Сертификат',y:'',src:encodeURI(q)};
     let y='';if(parts.length>1&&/^\d{4}$/.test(parts[parts.length-1]))y=parts.pop()+'-жыл';
     return {t:parts.join(' '),y,src:encodeURI(q)};
   });
